@@ -3,7 +3,7 @@
 # 1. Chat Sessions Table
 module "kk_chat_sessions" {
   create_table                          = var.is_primary ? true : false
-  source                                = "git@github.com:kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
+  source                                = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
   name                                  = "kk_chat_sessions_${var.env}"
   billing_mode                          = "PAY_PER_REQUEST"
   deletion_protection_enabled           = true
@@ -57,7 +57,7 @@ module "kk_chat_sessions" {
 # 2. Contact History Table
 module "kk_contact_history" {
   create_table                          = var.is_primary ? true : false
-  source                                = "git@github.com:kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
+  source                                = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
   name                                  = "kk_contact_history_${var.env}"
   billing_mode                          = "PAY_PER_REQUEST"
   deletion_protection_enabled           = true
@@ -111,7 +111,7 @@ module "kk_contact_history" {
 # 3. Callbacks Table
 module "kk_callbacks" {
   create_table                          = var.is_primary ? true : false
-  source                                = "git@github.com:kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
+  source                                = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
   name                                  = "kk_callbacks_${var.env}"
   billing_mode                          = "PAY_PER_REQUEST"
   deletion_protection_enabled           = true
@@ -178,7 +178,7 @@ module "kk_callbacks" {
 # 4. Audit Logs Table
 module "kk_audit_logs" {
   create_table                          = var.is_primary ? true : false
-  source                                = "git@github.com:kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
+  source                                = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-dynamodb-table-wrapper?ref=v1.0.0"
   name                                  = "kk_audit_logs_${var.env}"
   billing_mode                          = "PAY_PER_REQUEST"
   deletion_protection_enabled           = true

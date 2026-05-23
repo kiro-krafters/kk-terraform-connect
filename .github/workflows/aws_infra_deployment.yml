@@ -66,5 +66,3 @@ jobs:
       ENVIRONMENTS_CONFIG_DIR: environments
       AWS_REGION: us-east-1
       CI_ENVIRONMENT_NAME: ${{ needs.prepare-and-validate.outputs.env }}
-    secrets:
-      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
