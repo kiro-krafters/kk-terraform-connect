@@ -1,0 +1,70 @@
+name: Deploy Infrastructure
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Environment to deploy"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - prod
+
+permissions:
+  contents: read
+  id-token: write
+  pull-requests: write
+
+jobs:
+  prepare-and-validate:
+    name: Prepare and Validate
+    runs-on: ubuntu-22.04
+    outputs:
+      env: ${{ steps.validate.outputs.env }}
+
+    steps:
+      - name: Validate Branch and Environment
+        id: validate
+        run: |
+          BRANCH="${{ github.ref_name }}"
+          ENVIRONMENT="${{ github.event.inputs.environment }}"
+
+          echo "Branch: $BRANCH"
+          echo "Environment: $ENVIRONMENT"
+
+          case "$ENVIRONMENT" in
+            "dev")
+              echo "Any branch can deploy to dev"
+              ;;
+            "prod")
+              if [[ "$BRANCH" != "main" ]]; then
+                echo "Error: Only 'main' branch can deploy to production. Current: '$BRANCH'"
+                exit 1
+              fi
+              ;;
+            *)
+              echo "Error: Unknown environment '$ENVIRONMENT'"
+              exit 1
+              ;;
+          esac
+
+          echo "env=$ENVIRONMENT" >> $GITHUB_OUTPUT
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+  deploy-infrastructure:
+    name: Deploy Infrastructure - us-east-1 (${{ needs.prepare-and-validate.outputs.env }})
+    needs: prepare-and-validate
+    uses: kiro-krafters/shared-pipelines/.github/workflows/aws_infrastructure_deploy.yml@main
+    with:
+      WORKING_DIRECTORY: resources
+      ENVIRONMENTS_CONFIG_DIR: environments
+      AWS_REGION: us-east-1
+      CI_ENVIRONMENT_NAME: ${{ needs.prepare-and-validate.outputs.env }}
+    secrets:
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
