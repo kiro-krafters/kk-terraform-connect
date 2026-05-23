@@ -60,7 +60,7 @@ jobs:
   deploy-infrastructure:
     name: Deploy Infrastructure - us-east-1 (${{ needs.prepare-and-validate.outputs.env }})
     needs: prepare-and-validate
-    uses: kiro-krafters/shared-pipelines/workflows/aws_infrastructure_deploy.yml@main
+    uses: kiro-krafters/shared-pipelines/.github/workflows/aws_infrastructure_deploy.yml@main
     with:
       WORKING_DIRECTORY: resources
       ENVIRONMENTS_CONFIG_DIR: environments
