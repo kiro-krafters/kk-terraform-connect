@@ -31,11 +31,6 @@ variable "account_number" {
   description = "AWS Account Number."
 }
 
-variable "role_name" {
-  type        = string
-  description = "IAM role name for deployment."
-}
-
 variable "is_primary" {
   type        = bool
   description = "Set to true for primary region (us-east-1). DynamoDB tables will only be created in primary region."
