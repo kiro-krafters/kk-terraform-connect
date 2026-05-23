@@ -80,8 +80,7 @@ locals {
 
   # Lambda IAM configuration
   kk_lambda_iam_config = {
-    number_of_policy_jsons = 1
-    policy_jsons           = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    policy_jsons = true
   }
 
   # API Gateway configuration

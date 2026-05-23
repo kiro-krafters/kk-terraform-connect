@@ -2,53 +2,6 @@
 # Lambda Functions for KK Backend
 # ========================================
 
-locals {
-  kk_lambda_common_config = {
-    runtime                 = "nodejs20.x"
-    timeout                 = 6
-    memory_size             = 1024
-    ignore_source_code_hash = true
-    package                 = "./lambda_function/kk-backend.zip"
-    tags                    = local.tags
-  }
-
-  kk_lambda_bedrock_config = {
-    runtime                 = "nodejs20.x"
-    timeout                 = 29
-    memory_size             = 1024
-    ignore_source_code_hash = true
-    package                 = "./lambda_function/kk-backend.zip"
-    tags                    = local.tags
-  }
-
-  kk_lambda_environment = {
-    STAGE                      = var.env
-    CONNECT_INSTANCE_ID        = var.connect_instance_id
-    CONNECT_INSTANCE_ARN       = var.connect_instance_arn
-    CONNECT_QUEUE_GENERAL_ID   = var.connect_queue_general_id
-    CONNECT_QUEUE_CLAIMS_ID    = var.connect_queue_claims_id
-    CONNECT_CHAT_FLOW_ID       = var.connect_chat_flow_id
-    CONNECT_VOICE_FLOW_ID      = var.connect_voice_flow_id
-    COGNITO_USER_POOL_ID       = var.cognito_user_pool_id
-    COGNITO_REGION             = var.region
-    LEX_BOT_ID                 = var.lex_bot_id
-    LEX_BOT_ALIAS_ID           = var.lex_bot_alias_id
-    LEX_LOCALE_ID              = "en_US"
-    BEDROCK_MODEL_ID           = "anthropic.claude-3-haiku-20240307-v1:0"
-    DYNAMODB_SESSIONS_TABLE    = module.kk_chat_sessions.dynamodb_table_id
-    DYNAMODB_HISTORY_TABLE     = module.kk_contact_history.dynamodb_table_id
-    DYNAMODB_CALLBACKS_TABLE   = module.kk_callbacks.dynamodb_table_id
-    DYNAMODB_AUDIT_TABLE       = module.kk_audit_logs.dynamodb_table_id
-    PORTAL_ORIGIN              = var.portal_origin
-    CCP_ORIGIN                 = var.ccp_origin
-    ADMIN_ORIGIN               = var.admin_origin
-  }
-
-  kk_lambda_iam_config = {
-    policy_jsons = true
-  }
-}
-
 # Health Check Lambda
 module "kk_health_lambda" {
   source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
