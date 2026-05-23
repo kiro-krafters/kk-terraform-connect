@@ -1,0 +1,176 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "96594590-39dc-4054-aa3c-e04466a171d8",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -92.8,
+      "y": 47.2
+    },
+    "ActionMetadata": {
+      "38157a5f-0c0f-43d3-b504-fb46e49d22ab": {
+        "position": {
+          "x": 771.2,
+          "y": 28
+        }
+      },
+      "8cff62fc-fffa-4f33-95f0-9adde4dc543b": {
+        "position": {
+          "x": 528.8,
+          "y": 45.6
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "b9088536-66de-4925-9bb7-6c4d16430d28",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          }
+        ]
+      },
+      "2a9ade03-2979-4cca-86e3-f8b6948f948a": {
+        "position": {
+          "x": 1023.2,
+          "y": 58.4
+        }
+      },
+      "25f3c12f-e15c-4922-ae7b-b9c4191ac10d": {
+        "position": {
+          "x": 276,
+          "y": 46.4
+        }
+      },
+      "96594590-39dc-4054-aa3c-e04466a171d8": {
+        "position": {
+          "x": 23.2,
+          "y": 44
+        },
+        "parameters": {
+          "DataTableId": {
+            "displayName": "cb_flow_config"
+          }
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "cb_apply_masking_module",
+    "description": "",
+    "status": "published",
+    "settings": {},
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Disabled"
+      },
+      "Identifier": "38157a5f-0c0f-43d3-b504-fb46e49d22ab",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "2a9ade03-2979-4cca-86e3-f8b6948f948a"
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.FlowAttributes.is_masking_enable"
+      },
+      "Identifier": "8cff62fc-fffa-4f33-95f0-9adde4dc543b",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "2a9ade03-2979-4cca-86e3-f8b6948f948a",
+        "Conditions": [
+          {
+            "NextAction": "38157a5f-0c0f-43d3-b504-fb46e49d22ab",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "2a9ade03-2979-4cca-86e3-f8b6948f948a",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "2a9ade03-2979-4cca-86e3-f8b6948f948a",
+      "Type": "EndFlowModuleExecution",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "is_masking_enable": {
+            "Value": "$.DataTables.getConfig.value"
+          }
+        }
+      },
+      "Identifier": "25f3c12f-e15c-4922-ae7b-b9c4191ac10d",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "8cff62fc-fffa-4f33-95f0-9adde4dc543b",
+        "Errors": [
+          {
+            "NextAction": "8cff62fc-fffa-4f33-95f0-9adde4dc543b",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "DataTableId": "${cb_flow_config_data_table_id}",
+        "Queries": [
+          {
+            "QueryName": "getConfig",
+            "Attributes": [
+              "value"
+            ],
+            "PrimaryValues": [
+              {
+                "AttributeName": "config_name",
+                "Value": "is_masking_enable"
+              }
+            ]
+          }
+        ]
+      },
+      "Identifier": "96594590-39dc-4054-aa3c-e04466a171d8",
+      "Type": "EvaluateDataTableValues",
+      "Transitions": {
+        "NextAction": "25f3c12f-e15c-4922-ae7b-b9c4191ac10d",
+        "Errors": [
+          {
+            "NextAction": "25f3c12f-e15c-4922-ae7b-b9c4191ac10d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ],
+  "Settings": {
+    "InputParameters": [],
+    "OutputParameters": [],
+    "Transitions": [
+      {
+        "DisplayName": "Success",
+        "ReferenceName": "Success",
+        "Description": ""
+      },
+      {
+        "DisplayName": "Error",
+        "ReferenceName": "Error",
+        "Description": ""
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Amazon Connect default system prompts
+
+Parameters:
+  pConnectInstanceArn:
+    Type: String
+    Description: ARN of the Amazon Connect instance where prompts will be created
+
+  pBucketName:
+    Type: String
+    Description: Name of the S3 bucket containing Amazon Connect prompt audio files
+
+  pOffForHolidaysPromptKey:
+    Type: String
+    Description: S3 object key for the "Off for Holidays" prompt audio file
+
+  pOutOfHoursPromptKey:
+    Type: String
+    Description: S3 object key for the "Out of Hours" prompt audio file
+
+  pSilencePromptKey:
+    Type: String
+    Description: S3 object key for the "Silence / No Input" prompt audio file
+
+  pInboundCallConnectingToNavigatorPromptKey:
+    Type: String
+    Description: S3 object key for the "Inbound Call Connecting To Navigator" prompt audio file
+
+  pInboundCallNavigatorsBusyPromptKey:
+    Type: String
+    Description: S3 object key for the "Inbound Call Navigator Busy" prompt audio file
+
+Resources:
+  OffForHolidaysPrompt:
+    Type: AWS::Connect::Prompt
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: cb_off_for_holidays
+      Description: Prompt played when contact center is closed for holidays
+      S3Uri: !Sub "s3://${pBucketName}/${pOffForHolidaysPromptKey}"
+
+  OutOfHoursPrompt:
+    Type: AWS::Connect::Prompt
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: cb_out_of_hours
+      Description: Prompt played outside business hours
+      S3Uri: !Sub "s3://${pBucketName}/${pOutOfHoursPromptKey}"
+
+  SilencePrompt:
+    Type: AWS::Connect::Prompt
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: cb_silence
+      Description: Prompt played when caller input is not received
+      S3Uri: !Sub "s3://${pBucketName}/${pSilencePromptKey}"
+
+  InboundCallConnectingToNavigatorPrompt:
+    Type: AWS::Connect::Prompt
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: cb_inbound_call_connecting_to_navigator
+      Description: Prompt played just before when customer connect to navigator
+      S3Uri: !Sub "s3://${pBucketName}/${pInboundCallConnectingToNavigatorPromptKey}"
+
+  InboundCallNavigatorsBusyPrompt:
+    Type: AWS::Connect::Prompt
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: cb_inbound_call_navigator_busy
+      Description: Prompt played when navigator is busy
+      S3Uri: !Sub "s3://${pBucketName}/${pInboundCallNavigatorsBusyPromptKey}"

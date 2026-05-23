@@ -1,0 +1,943 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Amazon Connect Cases - Fields, Layout, and Template for CA Bridge Connect
+
+Parameters:
+  pCasesDomainId:
+    Type: String
+    Description: Existing Amazon Connect Cases Domain ID
+
+  pCustomerFieldId:
+    Type: String
+    Default: customer_id
+    Description: System field ID for Customer
+
+  pSummaryFieldId:
+    Type: String
+    Default: summary
+    Description: System field ID for Summary
+
+  pAssignedUserFieldId:
+    Type: String
+    Default: assigned_user
+    Description: System field ID for Assigned User
+
+  pCaseIdFieldId:
+    Type: String
+    Default: case_id
+    Description: System field ID for Case ID
+
+Resources:
+  rCaseFieldAge:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Age
+      Type: Text
+      Description: Customer age
+
+  rCaseFieldBarrierToTreatmentArrestIncarceration:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Arrest Incarceration"
+      Type: Boolean
+      Description: Indicates if arrest or incarceration is a barrier to treatment
+
+  rCaseFieldFor988:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "988"
+      Type: Boolean
+      Description: Indicates if the case was related to 988
+
+  rCaseFieldBarrierToTreatmentHomelessOrUnstableHousing:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Homeless Or Unstable Housing"
+      Type: Boolean
+      Description: Indicates if homeless or unstable housing is a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentInsuranceMoneyChallenges:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Insurance Money Challenges"
+      Type: Boolean
+      Description: Indicates if insurance or money challenges is a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentNoEveningAccess:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : No Evening Access"
+      Type: Boolean
+      Description: Indicates if no evening access is a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentOther:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Other"
+      Type: Boolean
+      Description: Indicates if other factors are a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentReportedContactWithUnfriendlyStaff:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Reported Contact With Unfriendly Staff"
+      Type: Boolean
+      Description: Indicates if reported contact with unfriendly staff is a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentTimeConstraintsDueToWorkingOrCareOfFamilyFriend:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Time Constraints Due To Working Or Care Of Family Friend"
+      Type: Boolean
+      Description: Indicates if time constraints due to working or care of family friend is a barrier to treatment
+
+  rCaseFieldBarrierToTreatmentTransportation:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Barrier To Treatment : Transportation"
+      Type: Boolean
+      Description: Indicates if transportation is a barrier to treatment
+
+
+  rCaseFieldCaseReason:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Case Reason
+      Type: SingleSelect
+      Description: Reason for the case
+
+  rCaseFieldLatestContactType:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Latest Contact Type
+      Type: SingleSelect
+      Description: Able to see latest contact type by participant
+
+  rCaseFieldCounty:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: County
+      Type: Text
+      Description: County of the caller
+
+  rCaseFieldEthnicity:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Ethnicity
+      Type: SingleSelect
+      Description: Indicates the ethnicity of the participant
+
+  rCaseFieldFlowType:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Flow Type
+      Type: Text
+      Description: Indicates the flow type of the case
+
+  rCaseFieldGender:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Gender
+      Type: SingleSelect
+      Description: Indicates the gender of the participant
+
+  rCaseFieldInsurancePreference:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Insurance Preference
+      Type: Text
+      Description: Indicates the insurance preference of the participant
+
+  rCaseFieldInterestedInBuprenorphrine:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Buprenorphrine"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Buprenorphrine
+
+  rCaseFieldInterestedInDetox:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Detox"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Detox
+
+  rCaseFieldInterestedInHIVHepC:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : HIV/Hep C"
+      Type: Boolean
+      Description: Indicates if the participant is interested in HIV/Hep C
+
+  rCaseFieldInterestedInMentalHealthResources:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Mental Health Resources"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Mental Health Resources
+
+  rCaseFieldInterestedInMethadone:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Methadone"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Methadone
+
+  rCaseFieldInterestedInOverdosePreventionSupplies:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Overdose Prevention Supplies"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Overdose Prevention Supplies
+
+  rCaseFieldInterestedInReconnectToServices:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Reconnect to Services"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Reconnect to Services
+
+  rCaseFieldInterestedInReproductiveHealth:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Reproductive Health"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Reproductive Health
+
+  rCaseFieldInterestedInResidentialTreatment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Residential Treatment"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Residential Treatment
+
+  rCaseFieldInterestedInTreatmentForAlcohol:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Treatment for Alcohol"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Treatment for Alcohol
+
+  rCaseFieldInterestedInTreatmentForMeth:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Treatment for Meth"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Treatment for Meth
+
+  rCaseFieldInterestedInTreatmentForOtherSubstances:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Interested In : Treatment for Other Substances"
+      Type: Boolean
+      Description: Indicates if the participant is interested in Treatment for Other Substances
+
+  rCaseFieldNavigationOutcomeNoReferralInformationOnly:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : No Referral, Information Only"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was no referral, information only
+
+  rCaseFieldNavigationOutcomeNoReferralIrrelevant:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : No Referral, Irrelevant"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was no referral, irrelevant
+
+  rCaseFieldNavigationOutcomeNoReferralOutOfScope:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : No Referral, Out of Scope"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was no referral, out of scope
+
+  rCaseFieldNavigationOutcomeNoReferralOutsideServiceArea:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : No Referral, Outside Service Area"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was no referral, outside service area
+
+  rCaseFieldNavigationOutcomeNoReferralReferralRefused:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : No Referral, Referral Refused"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was no referral, referral refused
+
+  rCaseFieldNavigationOutcomeReferralForBuprenorphine:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral for Buprenorphine"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral for Buprenorphine
+
+  rCaseFieldNavigationOutcomeReferralForMethadone:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral for Methadone"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral for Methadone
+
+  rCaseFieldNavigationOutcomeReferralForOtherSocialServices:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral for Other Social Services"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral for Other Social Services
+
+  rCaseFieldNavigationOutcomeReferralForOverdosePreventionSupplies:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral for Overdose Prevention Supplies"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral for Overdose Prevention Supplies
+
+  rCaseFieldNavigationOutcomeReferralForResidentialTreatment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral for Residential Treatment"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral for Residential Treatment
+
+  rCaseFieldNavigationOutcomeReferralTo211:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to 211"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to 211
+
+  rCaseFieldNavigationOutcomeReferralTo911:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to 911"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to 911
+
+  rCaseFieldNavigationOutcomeReferralToCDCGetTestedWebsite:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to CDC Get Tested Website"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to CDC Get Tested Website
+
+  rCaseFieldNavigationOutcomeReferralToHIVGov:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to HIV.gov"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to HIV.gov
+
+  rCaseFieldNavigationOutcomeReferralToCountyAccessLine:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to County Access Line"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to County Access Line
+
+  rCaseFieldNavigationOutcomeReferralToEmergencyDepartment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to Emergency Department"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to Emergency Department
+
+  rCaseFieldNavigationOutcomeReferralToClinic:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to Clinic"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to Clinic
+
+  rCaseFieldNavigationOutcomeReferralToTelemedicine:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Navigation Outcome : Referral to Telemedicine"
+      Type: Boolean
+      Description: Indicates if the navigation outcome was referral to Telemedicine
+
+  rCaseFieldRace:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Race
+      Type: SingleSelect
+      Description: Indicates the race
+
+  rCaseFieldReferral1:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Referral #1"
+      Type: Text
+      Description: First referral provided
+
+  rCaseFieldReferral2:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Referral #2"
+      Type: Text
+      Description: Second referral provided
+
+  rCaseFieldReferral3:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Referral #3"
+      Type: Text
+      Description: Third referral provided
+
+  rCaseFieldReferral4:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Referral #4"
+      Type: Text
+      Description: Fourth referral provided
+
+  rCaseFieldHowDidYouHearAboutUs:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "How did you hear about us"
+      Type: Text
+      Description: How the customer heard about the service
+
+  rCaseFieldAreYouCallingForYourselfOrSomeoneElse:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Are you calling for yourself or someone else?
+      Type: SingleSelect
+      Description: Indicates if the caller is calling for themselves or someone else
+
+  rCaseFieldSMSConsent:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: SMS Consent
+      Type: Boolean
+      Description: Indicates if SMS consent was given
+
+  rCaseFieldDataSharingConsent:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Data Sharing Consent
+      Type: Boolean
+      Description: Indicates if data sharing consent was given
+
+  rCaseFieldZIPCode:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: ZIP Code
+      Type: Text
+      Description: Indicates the ZIP Code
+
+  rCaseFieldCallBackDue:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Call Back Due
+      Type: DateTime
+      Description: Indicates when the callback is due
+
+  rCaseFieldCallbackRequired:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Callback Required
+      Type: SingleSelect
+      Description: Case field to indicate whether a callback is required for any Follow up
+
+  rCaseFieldAttempts:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: Attempts
+      Type: SingleSelect
+      Description: Count of attempts performed. 
+
+  rCaseFieldFollowUpDay:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "Follow-up Day"
+      Type: SingleSelect
+      Description: Case field to indicate whether a callback is required for any Follow up
+      
+  rCaseFieldFUMATDay1DidYouGoToTheReferralSite:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 1 : Did you go to the referral site?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 1 referral site status
+
+  rCaseFieldFUMATDay1DoYouHaveAFollowUpApptScheduled:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 1 : Do you have a follow-up appt scheduled?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 1 follow-up appointment scheduled status
+
+  rCaseFieldFUMATDay1Notes:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 1 : Notes"
+      Type: Text
+      Description: Case field for FU MAT Day 1 notes
+
+  rCaseFieldFUMATDay1WereYouAbleToGetTheTreatment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 1 : Were you able to get the treatment?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 1 treatment status
+
+  rCaseFieldFUMATDay1WhereIsFUAppt:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 1 : Where is FU Appt?"
+      Type: Text
+      Description: Case field for FU MAT Day 1 follow-up appointment location
+
+  rCaseFieldFUMATDay30AreYouPlanningToDidYouAttendAFollowUpAppointment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 30 : Are you planning to/did you attend a follow-up appointment?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 30 follow-up attendance status
+
+  rCaseFieldFUMATDay30AreYouStillTakingMAT:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 30 : Are you still taking [MAT]?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 30 MAT status
+
+  rCaseFieldFUMATDay30Notes:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 30 : Notes"
+      Type: Text
+      Description: Case field for FU MAT Day 30 notes
+
+  rCaseFieldFUMATDay30WhereIsFUAppt:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 30 : Where is FU Appt?"
+      Type: Text
+      Description: Case field for FU MAT Day 30 follow-up appointment location
+
+  rCaseFieldFUMATDay60AreYouPlanningToDidYouAttendAFollowUpAppointment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 60 : Are you planning to/did you attend a follow-up appointment?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 60 follow-up attendance status
+
+  rCaseFieldFUMATDay60AreYouStillTakingMAT:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 60 : Are you still taking [MAT]?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 60 MAT status
+
+  rCaseFieldFUMATDay60Notes:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 60 : Notes"
+      Type: Text
+      Description: Case field for FU MAT Day 60 notes
+
+  rCaseFieldFUMATDay60WhereIsFUAppt:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 60 : Where is FU Appt?"
+      Type: Text
+      Description: Case field for FU MAT Day 60 follow-up appointment location
+
+  rCaseFieldFUMATDay90AreYouPlanningToDidYouAttendAFollowUpAppointment:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 90 : Are you planning to/did you attend a follow-up appointment?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 90 follow-up attendance status
+
+  rCaseFieldFUMATDay90AreYouStillTakingMAT:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 90 : Are you still taking [MAT]?"
+      Type: SingleSelect
+      Description: Case field for FU MAT Day 90 MAT status
+
+  rCaseFieldFUMATDay90Notes:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 90 : Notes"
+      Type: Text
+      Description: Case field for FU MAT Day 90 notes
+
+  rCaseFieldFUMATDay90WhereIsFUAppt:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU MAT Day 90 : Where is FU Appt?"
+      Type: Text
+      Description: Case field for FU MAT Day 90 follow-up appointment location
+
+  rCaseFieldFUNonMATAreYouInterestedInAReferralToMAT:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU Non-MAT : Are you interested in a referral to MAT?"
+      Type: SingleSelect
+      Description: Case field for Non-MAT referral interest
+
+  rCaseFieldFUNonMATDidYouGetWhatYouNeededFromOurCall:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: "FU Non-MAT : Did you get what you needed from our call?"
+      Type: SingleSelect
+      Description: Case field for Non-MAT call outcome
+
+  rCaseFieldSMSHistory:
+    Type: AWS::Cases::Field
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: SMS History
+      Type: Text
+      Description: Tracking SMS history
+      Attributes:
+        Text:
+          IsMultiline: true
+
+  rGeneralSupportLayout:
+    Type: AWS::Cases::Layout
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: cb_general_support_layout
+      Content:
+        Basic:
+          TopPanel:
+            Sections:
+              - FieldGroup:
+                  Fields:
+                    - Id: !Ref pCustomerFieldId
+                    - Id: !Ref pSummaryFieldId
+                    - Id: !Ref pAssignedUserFieldId
+                    - Id: !GetAtt rCaseFieldCallbackRequired.FieldId
+                    - Id: !GetAtt rCaseFieldCallBackDue.FieldId
+                    - Id: !GetAtt rCaseFieldSMSConsent.FieldId
+                    - Id: !GetAtt rCaseFieldFor988.FieldId
+                    - Id: !GetAtt rCaseFieldAreYouCallingForYourselfOrSomeoneElse.FieldId
+                    - Id: !GetAtt rCaseFieldZIPCode.FieldId
+                    - Id: !GetAtt rCaseFieldCounty.FieldId
+                    - Id: !GetAtt rCaseFieldAge.FieldId
+                    - Id: !GetAtt rCaseFieldInsurancePreference.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInBuprenorphrine.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInMethadone.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInReconnectToServices.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInOverdosePreventionSupplies.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInMentalHealthResources.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInResidentialTreatment.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInDetox.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInTreatmentForMeth.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInTreatmentForAlcohol.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInTreatmentForOtherSubstances.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInReproductiveHealth.FieldId
+                    - Id: !GetAtt rCaseFieldInterestedInHIVHepC.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralForBuprenorphine.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralForMethadone.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralForOverdosePreventionSupplies.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralForResidentialTreatment.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralForOtherSocialServices.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralTo211.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToCountyAccessLine.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToClinic.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToTelemedicine.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToEmergencyDepartment.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralTo911.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToHIVGov.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeReferralToCDCGetTestedWebsite.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeNoReferralOutOfScope.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeNoReferralIrrelevant.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeNoReferralInformationOnly.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeNoReferralOutsideServiceArea.FieldId
+                    - Id: !GetAtt rCaseFieldNavigationOutcomeNoReferralReferralRefused.FieldId
+                    - Id: !GetAtt rCaseFieldReferral1.FieldId
+                    - Id: !GetAtt rCaseFieldReferral2.FieldId
+                    - Id: !GetAtt rCaseFieldReferral3.FieldId
+                    - Id: !GetAtt rCaseFieldReferral4.FieldId
+                    - Id: !GetAtt rCaseFieldGender.FieldId
+                    - Id: !GetAtt rCaseFieldEthnicity.FieldId
+                    - Id: !GetAtt rCaseFieldRace.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentTransportation.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentHomelessOrUnstableHousing.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentArrestIncarceration.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentInsuranceMoneyChallenges.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentReportedContactWithUnfriendlyStaff.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentTimeConstraintsDueToWorkingOrCareOfFamilyFriend.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentNoEveningAccess.FieldId
+                    - Id: !GetAtt rCaseFieldBarrierToTreatmentOther.FieldId
+                    - Id: !Ref pCaseIdFieldId
+                    - Id: !GetAtt rCaseFieldSMSHistory.FieldId
+                    - Id: !GetAtt rCaseFieldDataSharingConsent.FieldId
+                    - Id: !GetAtt rCaseFieldHowDidYouHearAboutUs.FieldId
+          MoreInfo:
+            Sections:
+              - FieldGroup:
+                  Fields:
+                    - Id: !GetAtt rCaseFieldFUMATDay1DidYouGoToTheReferralSite.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay1WereYouAbleToGetTheTreatment.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay1DoYouHaveAFollowUpApptScheduled.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay1WhereIsFUAppt.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay1Notes.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay30AreYouStillTakingMAT.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay30AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay30WhereIsFUAppt.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay30Notes.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay60AreYouStillTakingMAT.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay60AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay60WhereIsFUAppt.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay60Notes.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay90AreYouStillTakingMAT.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay90AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay90WhereIsFUAppt.FieldId
+                    - Id: !GetAtt rCaseFieldFUMATDay90Notes.FieldId
+                    - Id: !GetAtt rCaseFieldFUNonMATDidYouGetWhatYouNeededFromOurCall.FieldId
+                    - Id: !GetAtt rCaseFieldFUNonMATAreYouInterestedInAReferralToMAT.FieldId
+
+  rGeneralSupportTemplate:
+    Type: AWS::Cases::Template
+    Properties:
+      DomainId: !Ref pCasesDomainId
+      Name: cb_general_support_template
+      Description: General support case template
+      Status: Active
+      LayoutConfiguration:
+        DefaultLayout: !GetAtt rGeneralSupportLayout.LayoutArn
+
+Outputs:
+  oCasesDomainId:
+    Description: Amazon Connect Cases Domain ID
+    Value: !Ref pCasesDomainId
+    Export:
+      Name: !Sub "${AWS::StackName}-CasesDomainId"
+
+  oGeneralSupportLayoutId:
+    Description: Layout ID
+    Value: !GetAtt rGeneralSupportLayout.LayoutId
+    Export:
+      Name: !Sub "${AWS::StackName}-GeneralSupportLayoutId"
+
+  oGeneralSupportTemplateId:
+    Description: Case Template ID
+    Value: !GetAtt rGeneralSupportTemplate.TemplateId
+    Export:
+      Name: !Sub "${AWS::StackName}-GeneralSupportTemplateId"
+
+  oFieldFlowTypeId:
+    Description: Field ID for Flow Type
+    Value: !GetAtt rCaseFieldFlowType.FieldId
+    Export:
+      Name: !Sub "oFieldFlowTypeId"
+
+  oFieldSMSConsentId:
+    Description: Field ID for SMS Consent
+    Value: !GetAtt rCaseFieldSMSConsent.FieldId
+    Export:
+      Name: !Sub "oFieldSMSConsentId"
+
+  oFieldZIPCodeId:
+    Description: Field ID for ZIP Code
+    Value: !GetAtt rCaseFieldZIPCode.FieldId
+    Export:
+      Name: !Sub "oFieldZIPCodeId"
+
+  oFieldEthnicityId:
+    Description: Field ID for Ethnicity
+    Value: !GetAtt rCaseFieldEthnicity.FieldId
+    Export:
+      Name: !Sub "oFieldEthnicityId"
+
+  oFieldGenderId:
+    Description: Field ID for Gender
+    Value: !GetAtt rCaseFieldGender.FieldId
+    Export:
+      Name: !Sub "oFieldGenderId"
+
+  oFieldRaceId:
+    Description: Field ID for Race
+    Value: !GetAtt rCaseFieldRace.FieldId
+    Export:
+      Name: !Sub "oFieldRaceId"
+
+  oFieldAreYouCallingForYourselfOrSomeoneElseId:
+    Description: Field ID for Are you calling for yourself or someone else?
+    Value: !GetAtt rCaseFieldAreYouCallingForYourselfOrSomeoneElse.FieldId
+    Export:
+      Name: !Sub "oFieldAreYouCallingForYourselfOrSomeoneElseId"
+
+  oFieldCallbackRequiredId:
+    Description: Field ID for Callback Required
+    Value: !GetAtt rCaseFieldCallbackRequired.FieldId
+    Export:
+      Name: !Sub "oFieldCallbackRequiredId"
+
+  oFieldFollowUpDayId:
+    Description: Field ID for Follow-up Day
+    Value: !GetAtt rCaseFieldFollowUpDay.FieldId
+    Export:
+      Name: !Sub "oFieldFollowUpDayId"
+
+  oFieldAttemptsId:
+    Description: Field ID for Callback Attempts
+    Value: !GetAtt rCaseFieldAttempts.FieldId
+    Export:
+      Name: !Sub "oFieldCallbackAttemptsId"
+
+  oFieldFUMATDay1DidYouGoToTheReferralSiteId:
+    Description: Field ID for FU MAT Day 1 - Did you go to the referral site?
+    Value: !GetAtt rCaseFieldFUMATDay1DidYouGoToTheReferralSite.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay1DidYouGoToTheReferralSiteId"
+
+  oFieldFUMATDay1DoYouHaveAFollowUpApptScheduledId:
+    Description: Field ID for FU MAT Day 1 - Do you have a follow-up appt scheduled?
+    Value: !GetAtt rCaseFieldFUMATDay1DoYouHaveAFollowUpApptScheduled.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay1DoYouHaveAFollowUpApptScheduledId"
+
+  oFieldFUMATDay1WereYouAbleToGetTheTreatmentId:
+    Description: Field ID for FU MAT Day 1 - Were you able to get the treatment?
+    Value: !GetAtt rCaseFieldFUMATDay1WereYouAbleToGetTheTreatment.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay1WereYouAbleToGetTheTreatmentId"
+
+  oFieldFUMATDay30AreYouPlanningToDidYouAttendAFollowUpAppointmentId:
+    Description: Field ID for FU MAT Day 30 - Are you planning to/did you attend a follow-up appointment?
+    Value: !GetAtt rCaseFieldFUMATDay30AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay30AreYouPlanningToDidYouAttendAFollowUpAppointmentId"
+
+  oFieldFUMATDay30AreYouStillTakingMATId:
+    Description: Field ID for FU MAT Day 30 - Are you still taking [MAT]?
+    Value: !GetAtt rCaseFieldFUMATDay30AreYouStillTakingMAT.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay30AreYouStillTakingMATId"
+
+  oFieldFUMATDay60AreYouPlanningToDidYouAttendAFollowUpAppointmentId:
+    Description: Field ID for FU MAT Day 60 - Are you planning to/did you attend a follow-up appointment?
+    Value: !GetAtt rCaseFieldFUMATDay60AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay60AreYouPlanningToDidYouAttendAFollowUpAppointmentId"
+
+  oFieldFUMATDay60AreYouStillTakingMATId:
+    Description: Field ID for FU MAT Day 60 - Are you still taking [MAT]?
+    Value: !GetAtt rCaseFieldFUMATDay60AreYouStillTakingMAT.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay60AreYouStillTakingMATId"
+
+  oFieldFUMATDay90AreYouPlanningToDidYouAttendAFollowUpAppointmentId:
+    Description: Field ID for FU MAT Day 90 - Are you planning to/did you attend a follow-up appointment?
+    Value: !GetAtt rCaseFieldFUMATDay90AreYouPlanningToDidYouAttendAFollowUpAppointment.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay90AreYouPlanningToDidYouAttendAFollowUpAppointmentId"
+
+  oFieldFUMATDay90AreYouStillTakingMATId:
+    Description: Field ID for FU MAT Day 90 - Are you still taking [MAT]?
+    Value: !GetAtt rCaseFieldFUMATDay90AreYouStillTakingMAT.FieldId
+    Export:
+      Name: !Sub "oFieldFUMATDay90AreYouStillTakingMATId"
+
+  oFieldFUNonMATAreYouInterestedInAReferralToMATId:
+    Description: Field ID for FU Non-MAT - Are you interested in a referral to MAT?
+    Value: !GetAtt rCaseFieldFUNonMATAreYouInterestedInAReferralToMAT.FieldId
+    Export:
+      Name: !Sub "oFieldFUNonMATAreYouInterestedInAReferralToMATId"
+
+  oFieldFUNonMATDidYouGetWhatYouNeededFromOurCallId:
+    Description: Field ID for FU Non-MAT - Did you get what you needed from our call?
+    Value: !GetAtt rCaseFieldFUNonMATDidYouGetWhatYouNeededFromOurCall.FieldId
+    Export:
+      Name: !Sub "oFieldFUNonMATDidYouGetWhatYouNeededFromOurCallId"
+
+  oSMSHistoryFieldID:
+    Description: Field ID for SMS History
+    Value: !GetAtt rCaseFieldSMSHistory.FieldId
+    Export:
+      Name: !Sub "oSMSHistoryFieldID"
+      
+  oLatestContactTypeFieldID:
+    Description: Field ID for Latest Contact Type
+    Value: !GetAtt rCaseFieldLatestContactType.FieldId
+    Export:
+      Name: !Sub "oLatestContactTypeFieldID"

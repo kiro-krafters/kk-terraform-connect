@@ -1,0 +1,108 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "6de5c864-660c-4623-b9c6-f72176c33177",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "eedfaf1a-73c6-4b5d-bc29-a983cc19dd72": {
+        "position": {
+          "x": 1026.4,
+          "y": 308
+        }
+      },
+      "9b099fb7-c552-4d76-b1bd-c3a0687b1d2b": {
+        "position": {
+          "x": 438.4,
+          "y": 63.2
+        }
+      },
+      "6de5c864-660c-4623-b9c6-f72176c33177": {
+        "position": {
+          "x": 173.6,
+          "y": 40.8
+        },
+        "parameters": {
+          "QueueId": {
+            "displayName": "Tasks Queue"
+          }
+        },
+        "queue": {
+          "text": "Tasks Queue"
+        }
+      },
+      "be38344b-8b3e-43cc-b70d-d1de9543e200": {
+        "position": {
+          "x": 713.6,
+          "y": 252
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "task flow",
+    "description": "",
+    "type": "agentTransfer",
+    "status": "PUBLISHED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "eedfaf1a-73c6-4b5d-bc29-a983cc19dd72",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {},
+      "Identifier": "9b099fb7-c552-4d76-b1bd-c3a0687b1d2b",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "be38344b-8b3e-43cc-b70d-d1de9543e200",
+        "Errors": [
+          {
+            "NextAction": "be38344b-8b3e-43cc-b70d-d1de9543e200",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "be38344b-8b3e-43cc-b70d-d1de9543e200",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "${cb_task_queue}"
+      },
+      "Identifier": "6de5c864-660c-4623-b9c6-f72176c33177",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "9b099fb7-c552-4d76-b1bd-c3a0687b1d2b",
+        "Errors": [
+          {
+            "NextAction": "be38344b-8b3e-43cc-b70d-d1de9543e200",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Failed to transfer."
+      },
+      "Identifier": "be38344b-8b3e-43cc-b70d-d1de9543e200",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "eedfaf1a-73c6-4b5d-bc29-a983cc19dd72",
+        "Errors": [
+          {
+            "NextAction": "eedfaf1a-73c6-4b5d-bc29-a983cc19dd72",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1944 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "52112dec-d24f-4bcc-9052-4c91b4738a6b",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -1748.8,
+      "y": 820.8
+    },
+    "ActionMetadata": {
+      "52112dec-d24f-4bcc-9052-4c91b4738a6b": {
+        "position": {
+          "x": -1623.2,
+          "y": 820
+        }
+      },
+      "be2f85f8-8407-42ad-af92-53f414172702": {
+        "position": {
+          "x": 2243.2,
+          "y": 1514.4
+        },
+        "parameters": {
+          "EventHooks": {
+            "AgentWhisper": {
+              "displayName": "cb_phone_agent_whisper"
+            }
+          }
+        },
+        "contactFlow": {
+          "text": "cb_phone_agent_whisper",
+          "id": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/contact-flow/c3eec705-970f-46b3-8aa6-d477912e3886"
+        },
+        "customerOrAgent": false
+      },
+      "d6c75242-1bb1-4eda-a404-f6454f902365": {
+        "position": {
+          "x": 1196.8,
+          "y": 1285.6
+        },
+        "parameters": {
+          "Attributes": {
+            "cases_any": {
+              "useDynamic": true
+            },
+            "case_id": {
+              "useDynamic": true
+            },
+            "last_case_status": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "cases_any",
+          "case_id",
+          "last_case_status"
+        ]
+      },
+      "589106e3-704e-4450-8ba5-aa0c56e43ee0": {
+        "position": {
+          "x": 331.2,
+          "y": 1266.4
+        }
+      },
+      "9d4d038c-668b-43c8-8ae1-f5f41d1d137b": {
+        "position": {
+          "x": 616.8,
+          "y": 1278.4
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      },
+      "1bad58fd-81d0-464c-b0a9-cdc13852fe5e": {
+        "position": {
+          "x": 2504,
+          "y": 1511.2
+        }
+      },
+      "44f11ed0-f5e9-4a8f-877a-27f72061b1cd": {
+        "position": {
+          "x": 2773.6,
+          "y": 1508.8
+        }
+      },
+      "cee6d964-e9a4-4a0c-bac6-b340978ab036": {
+        "position": {
+          "x": -33.6,
+          "y": 106.4
+        }
+      },
+      "09fc0a7d-fe1d-44e2-82e6-1b58df083faf": {
+        "position": {
+          "x": 620,
+          "y": 1508
+        }
+      },
+      "897646a0-b331-4965-9ef7-a0b2f0720c3d": {
+        "position": {
+          "x": 336,
+          "y": 1452
+        },
+        "dynamicParams": []
+      },
+      "2dee3ad3-13e7-4b60-a980-c3a8efec93f8": {
+        "position": {
+          "x": 919.2,
+          "y": 1284.8
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "get_non_closed_cases"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "eb047788-0cc3-4c68-a774-0aa6a659a5ce": {
+        "position": {
+          "x": 927.2,
+          "y": 1600.8
+        },
+        "parameters": {
+          "Attributes": {
+            "error_block": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "error_block"
+        ]
+      },
+      "Set standard queue": {
+        "position": {
+          "x": 2263.2,
+          "y": -76
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "QueueId": {
+            "displayName": "Tasks Queue"
+          }
+        },
+        "queue": {
+          "text": "Tasks Queue"
+        }
+      },
+      "Set remaining required attributes for VMX3": {
+        "position": {
+          "x": 2492,
+          "y": -72.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "vmx3_from": {
+              "useDynamic": true
+            },
+            "vmx3_queue_arn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "vmx3_from",
+          "vmx3_queue_arn"
+        ]
+      },
+      "7ef3b271-2693-424b-b1cd-966991fa5ce2": {
+        "position": {
+          "x": 2720,
+          "y": -69.6
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_main_voicemail_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_main_voicemail_module"
+      },
+      "7485dd05-c6aa-4ed5-b126-977214160f18": {
+        "position": {
+          "x": 2962.4,
+          "y": -58.4
+        }
+      },
+      "d5c15e2b-c8e4-40b2-9f90-7f91393ede23": {
+        "position": {
+          "x": -237.6,
+          "y": 1276
+        }
+      },
+      "4b779da1-7701-4480-a51f-06c3313c04dd": {
+        "position": {
+          "x": -487.2,
+          "y": 1264.8
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "a696fabf-5401-4ab9-9c38-08303b826a10": {
+        "position": {
+          "x": -860.8,
+          "y": 1256
+        },
+        "parameters": {
+          "QueueId": {
+            "displayName": "General Support"
+          }
+        },
+        "queue": {
+          "text": "General Support"
+        }
+      },
+      "a4583526-6bc8-4358-af68-1cec65d9f769": {
+        "position": {
+          "x": -848,
+          "y": 1576
+        },
+        "dynamicParams": []
+      },
+      "7d48cc90-c563-45df-a983-61a1e2ff0c8b": {
+        "position": {
+          "x": -617.6,
+          "y": 1584.8
+        }
+      },
+      "3b4cbdac-79ce-41eb-975e-3933690bf987": {
+        "position": {
+          "x": 2782.4,
+          "y": 1781.6
+        }
+      },
+      "6f441ef7-25b1-40c2-87c5-cea600d6c2ef": {
+        "position": {
+          "x": 3047.2,
+          "y": 1505.6
+        },
+        "dynamicParams": []
+      },
+      "ce9f9feb-a343-49dd-8d6c-1d3934292340": {
+        "position": {
+          "x": 3320.8,
+          "y": 1786.4
+        }
+      },
+      "f12f2721-fd17-4756-b644-0b86a5831a67": {
+        "position": {
+          "x": 1779.2,
+          "y": -259.2
+        },
+        "parameters": {
+          "PromptId": {
+            "displayName": "Off for holidays"
+          }
+        },
+        "promptName": "Off for holidays"
+      },
+      "ca6479fc-0921-4f15-b105-7fd51b7f1e93": {
+        "position": {
+          "x": 2036.8,
+          "y": -73.6
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "bc413bf2-2432-49e7-8f44-cfad29d5f198": {
+        "position": {
+          "x": 1780.8,
+          "y": 0
+        },
+        "parameters": {
+          "PromptId": {
+            "displayName": "Out of Hours"
+          }
+        },
+        "promptName": "Out of Hours"
+      },
+      "f176b5c4-85e3-453d-ac7e-76247ad9f44d": {
+        "position": {
+          "x": 446.4,
+          "y": 100.8
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "get_non_closed_cases"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "Holidays": {
+        "position": {
+          "x": -1372,
+          "y": 804.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "HoursOfOperationId": {
+            "displayName": "Holidays"
+          }
+        },
+        "Hours": {
+          "id": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/operating-hours/dba9bc58-b423-43ee-b379-866f595f951e",
+          "text": "Holidays"
+        }
+      },
+      "e8834738-7df4-4dd9-b9ff-ce3b3931a6df": {
+        "position": {
+          "x": -619.2,
+          "y": 743.2
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "d3ef153f-fcb7-41c1-9664-08cca7b31dd5": {
+        "position": {
+          "x": -1068.8,
+          "y": 516.8
+        },
+        "dynamicParams": []
+      },
+      "5cda6ce9-b539-4959-8ee3-55b6ac4bb9d1": {
+        "position": {
+          "x": -101.6,
+          "y": 824
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "IdentifierValue": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "IdentifierValue": true
+        },
+        "customerProfilesAction": "GetCustomerProfile"
+      },
+      "7c09c1ff-de9f-4045-bef3-3025630e5c65": {
+        "position": {
+          "x": 187.2,
+          "y": 107.2
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      },
+      "e20905e9-ed7b-4c94-8a9d-e1e4441e91dc": {
+        "position": {
+          "x": 655.2,
+          "y": 1004.8
+        }
+      },
+      "1a831396-b18a-439b-a562-7ccdc1dfd7a0": {
+        "position": {
+          "x": -1078.4,
+          "y": 788.8
+        },
+        "parameters": {
+          "HoursOfOperationId": {
+            "displayName": "Business Hours"
+          }
+        },
+        "Hours": {
+          "id": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/operating-hours/f5ed8f24-b7b0-421f-ac38-996ff53549a7",
+          "text": "Business Hours"
+        }
+      },
+      "552eef60-5283-4e54-8127-1252c60f4a49": {
+        "position": {
+          "x": -340,
+          "y": 824
+        }
+      },
+      "85392a22-b0c8-4e41-b81f-05e5d0300d3a": {
+        "position": {
+          "x": 712.8,
+          "y": 91.2
+        },
+        "parameters": {
+          "Attributes": {
+            "cases_any": {
+              "useDynamic": true
+            },
+            "case_id": {
+              "useDynamic": true
+            },
+            "last_case_status": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "cases_any",
+          "case_id",
+          "last_case_status"
+        ]
+      },
+      "49738ce2-4f96-4a8e-a36c-5984726b3640": {
+        "position": {
+          "x": 1750.4,
+          "y": 492
+        }
+      },
+      "9d47394e-9bfb-4101-a8f6-5f1ac2df3ee9": {
+        "position": {
+          "x": 712,
+          "y": -152.8
+        },
+        "parameters": {
+          "Attributes": {
+            "error_block": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "error_block"
+        ]
+      },
+      "cb563c93-94be-4f4d-ab67-a22487e0ac94": {
+        "position": {
+          "x": 1509.6,
+          "y": -157.6
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "bbb09dd3-adcf-4553-bb3a-01c86a7c07cf",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "yes"
+          }
+        ]
+      },
+      "fc7d00a1-c1b3-42c8-bc72-db594b28fd42": {
+        "position": {
+          "x": 1243.2,
+          "y": 80
+        },
+        "parameters": {
+          "CaseRequestFields": {
+            "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": {
+              "displayName": "Voicemail"
+            },
+            "status": {
+              "displayName": "6- New Voicemail"
+            }
+          },
+          "caseId": {
+            "useDynamic": true
+          }
+        },
+        "action": "updateCaseAction",
+        "requestFieldsOptions": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Voicemail",
+          "status": "6- New Voicemail"
+        }
+      },
+      "ff5b5cb7-2b1c-4db3-bb83-b2b8cf9c60a8": {
+        "position": {
+          "x": 1727.2,
+          "y": 1802.4
+        },
+        "parameters": {
+          "Attributes": {
+            "case_id": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "case_id"
+        ]
+      },
+      "45897844-3785-4473-8701-b5c7311cfc6a": {
+        "position": {
+          "x": 1455.2,
+          "y": 1283.2
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "a638a774-1918-42d5-b14b-4e98f2a26219",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          },
+          {
+            "id": "bf2c0060-f0ed-48b1-9291-7ef9740e617b",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "false"
+          }
+        ]
+      },
+      "675541cb-8b07-4878-a502-e23421b836b2": {
+        "position": {
+          "x": 1979.2,
+          "y": 1516.8
+        },
+        "parameters": {
+          "EventHooks": {
+            "CustomerQueue": {
+              "displayName": "cb_phone_inbound_customer_queue"
+            }
+          }
+        },
+        "contactFlow": {
+          "text": "cb_phone_inbound_customer_queue",
+          "id": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/contact-flow/9aba6315-2b28-4264-baf3-df25a07f0cb1"
+        },
+        "customerOrAgent": true
+      },
+      "ffbfeebc-e70d-4fff-8f5a-0f7d67cd5bb3": {
+        "position": {
+          "x": 1706.4,
+          "y": 1272
+        },
+        "parameters": {
+          "CaseRequestFields": {
+            "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": {
+              "displayName": "Call"
+            }
+          },
+          "caseId": {
+            "useDynamic": true
+          }
+        },
+        "action": "updateCaseAction",
+        "requestFieldsOptions": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Call"
+        }
+      },
+      "a6661d7b-edea-46d9-8f5a-2c438847c34f": {
+        "position": {
+          "x": 149.6,
+          "y": 1012
+        },
+        "dynamicParams": []
+      },
+      "dbb988ea-fefe-494d-834e-839253c28b04": {
+        "position": {
+          "x": 349.6,
+          "y": 1867.2
+        }
+      },
+      "c5456e9b-bb3e-4b59-8e8a-05e21ba41f84": {
+        "position": {
+          "x": 76,
+          "y": 1248.8
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "IdentifierValue": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "IdentifierValue": true
+        },
+        "customerProfilesAction": "GetCustomerProfile"
+      },
+      "1860aaba-84ec-463b-bce3-dffd51abf4e1": {
+        "position": {
+          "x": 1333.6,
+          "y": 1820
+        },
+        "parameters": {
+          "CaseTemplateId": {
+            "displayName": "cb_general_support_template"
+          },
+          "CaseRequestFields": {
+            "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": {
+              "displayName": "Call"
+            },
+            "customer_id": {
+              "useDynamic": true
+            },
+            "status": {
+              "displayName": "Open"
+            }
+          }
+        },
+        "action": "createCaseAction",
+        "templateName": "cb_general_support_template",
+        "requestFieldsOptions": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Call",
+          "status": "Open"
+        },
+        "requiredFieldsOptions": []
+      },
+      "eae5d5f8-62c6-42fb-9ff0-f1f2414ab86f": {
+        "position": {
+          "x": 1216.8,
+          "y": 805.6
+        },
+        "parameters": {
+          "Attributes": {
+            "case_id": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "case_id"
+        ]
+      },
+      "7c4c7346-1d09-42ea-b5b2-ea5df52b76e2": {
+        "position": {
+          "x": 970.4,
+          "y": 80.8
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "ea7fe149-0340-4be8-bddc-b2a4cd943cb1",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          },
+          {
+            "id": "79398a98-3ee3-4533-b5dd-3b620581b586",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "false"
+          }
+        ]
+      },
+      "Errored recall": {
+        "position": {
+          "x": 1518.4,
+          "y": 484
+        },
+        "isFriendlyName": true
+      },
+      "51e4caf2-ec4c-437a-ac39-5857208a096a": {
+        "position": {
+          "x": 921.6,
+          "y": 824.8
+        },
+        "parameters": {
+          "CaseTemplateId": {
+            "displayName": "cb_general_support_template"
+          },
+          "CaseRequestFields": {
+            "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": {
+              "displayName": "Voicemail"
+            },
+            "customer_id": {
+              "useDynamic": true
+            },
+            "status": {
+              "displayName": "6- New Voicemail"
+            }
+          }
+        },
+        "action": "createCaseAction",
+        "templateName": "cb_general_support_template",
+        "requestFieldsOptions": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Voicemail",
+          "status": "6- New Voicemail"
+        },
+        "requiredFieldsOptions": []
+      },
+      "af424f21-9525-4272-9b93-ed18bb96a8d4": {
+        "position": {
+          "x": 145.6,
+          "y": 820.8
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "PhoneNumber": true
+        },
+        "customerProfilesAction": "CreateCustomerProfile"
+      },
+      "cd905c76-d873-47cd-aa8d-81fa5827ff2a": {
+        "position": {
+          "x": 259.2,
+          "y": 584.8
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      },
+      "052ef098-23f7-4811-9baa-35d8ed9f3a9e": {
+        "position": {
+          "x": 795.2,
+          "y": 580.8
+        }
+      },
+      "5e0ee80b-b5be-402c-aa96-493806a88f8a": {
+        "position": {
+          "x": -364.8,
+          "y": 1708
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "PhoneNumber": true
+        },
+        "customerProfilesAction": "CreateCustomerProfile"
+      },
+      "8b8335cd-e97a-40b6-9f33-a7774dea3ec8": {
+        "position": {
+          "x": -73.6,
+          "y": 1678.4
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      },
+      "aec26477-5413-425b-9524-29df8a3ffb9a": {
+        "position": {
+          "x": 635.2,
+          "y": 1708.8
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "cb_inbound_phone_call_flow",
+    "description": "Inbound phone call flow for Bridge Connect.",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "52112dec-d24f-4bcc-9052-4c91b4738a6b",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "Holidays"
+      }
+    },
+    {
+      "Parameters": {
+        "EventHooks": {
+          "AgentWhisper": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/contact-flow/c3eec705-970f-46b3-8aa6-d477912e3886"
+        },
+        "EventHooksConfiguration": {
+          "AgentWhisper": {
+            "DisableExecution": "false"
+          }
+        }
+      },
+      "Identifier": "be2f85f8-8407-42ad-af92-53f414172702",
+      "Type": "UpdateContactEventHooks",
+      "Transitions": {
+        "NextAction": "1bad58fd-81d0-464c-b0a9-cdc13852fe5e",
+        "Errors": [
+          {
+            "NextAction": "1bad58fd-81d0-464c-b0a9-cdc13852fe5e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "cases_any": "$.External.cases_any",
+          "case_id": "$.External.last_case_id",
+          "last_case_status": "$.External.last_case_status"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "d6c75242-1bb1-4eda-a404-f6454f902365",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "45897844-3785-4473-8701-b5c7311cfc6a",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "589106e3-704e-4450-8ba5-aa0c56e43ee0",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "9d4d038c-668b-43c8-8ae1-f5f41d1d137b"
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "9d4d038c-668b-43c8-8ae1-f5f41d1d137b",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "2dee3ad3-13e7-4b60-a980-c3a8efec93f8",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "EventHooksConfiguration": {
+          "CustomerWhisper": {
+            "DisableExecution": "true"
+          }
+        }
+      },
+      "Identifier": "1bad58fd-81d0-464c-b0a9-cdc13852fe5e",
+      "Type": "UpdateContactEventHooks",
+      "Transitions": {
+        "NextAction": "44f11ed0-f5e9-4a8f-877a-27f72061b1cd",
+        "Errors": [
+          {
+            "NextAction": "44f11ed0-f5e9-4a8f-877a-27f72061b1cd",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "44f11ed0-f5e9-4a8f-877a-27f72061b1cd",
+      "Type": "TransferContactToQueue",
+      "Transitions": {
+        "NextAction": "6f441ef7-25b1-40c2-87c5-cea600d6c2ef",
+        "Errors": [
+          {
+            "NextAction": "3b4cbdac-79ce-41eb-975e-3933690bf987",
+            "ErrorType": "QueueAtCapacity"
+          },
+          {
+            "NextAction": "6f441ef7-25b1-40c2-87c5-cea600d6c2ef",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "cee6d964-e9a4-4a0c-bac6-b340978ab036",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "7c09c1ff-de9f-4045-bef3-3025630e5c65"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "09fc0a7d-fe1d-44e2-82e6-1b58df083faf",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "675541cb-8b07-4878-a502-e23421b836b2"
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "CUSTOMER_PROFILE_ERROR",
+          "error_message": "Multiple Customer profile found",
+          "error_block": "GetCustomerProfile"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "897646a0-b331-4965-9ef7-a0b2f0720c3d",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "09fc0a7d-fe1d-44e2-82e6-1b58df083faf",
+        "Errors": [
+          {
+            "NextAction": "09fc0a7d-fe1d-44e2-82e6-1b58df083faf",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:982389018170:function:cb-lmda-get-non-closed-cases-use1-stg",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "2dee3ad3-13e7-4b60-a980-c3a8efec93f8",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "d6c75242-1bb1-4eda-a404-f6454f902365",
+        "Errors": [
+          {
+            "NextAction": "eb047788-0cc3-4c68-a774-0aa6a659a5ce",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "LAMBDA_ERROR",
+          "error_message": "Lambda invocation failed",
+          "error_block": "$.External.AWSLambdaFunction"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "eb047788-0cc3-4c68-a774-0aa6a659a5ce",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/queue/c116c1ca-13e8-4e26-a131-0630ba621515"
+      },
+      "Identifier": "Set standard queue",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "Set remaining required attributes for VMX3",
+        "Errors": [
+          {
+            "NextAction": "Set remaining required attributes for VMX3",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_from": "$.CustomerEndpoint.Address",
+          "vmx3_lang": "en-US",
+          "vmx3_queue_arn": "$.Queue.ARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set remaining required attributes for VMX3",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "7ef3b271-2693-424b-b1cd-966991fa5ce2",
+        "Errors": [
+          {
+            "NextAction": "7ef3b271-2693-424b-b1cd-966991fa5ce2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "7d3c1671-38c6-466b-a137-d8eee15ffe85:$LATEST"
+      },
+      "Identifier": "7ef3b271-2693-424b-b1cd-966991fa5ce2",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "7485dd05-c6aa-4ed5-b126-977214160f18",
+        "Errors": [
+          {
+            "NextAction": "7485dd05-c6aa-4ed5-b126-977214160f18",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "7485dd05-c6aa-4ed5-b126-977214160f18",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "7485dd05-c6aa-4ed5-b126-977214160f18",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "CallerNumber": {
+            "Value": "$.CustomerEndpoint.Address"
+          }
+        }
+      },
+      "Identifier": "d5c15e2b-c8e4-40b2-9f90-7f91393ede23",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "c5456e9b-bb3e-4b59-8e8a-05e21ba41f84",
+        "Errors": [
+          {
+            "NextAction": "a696fabf-5401-4ab9-9c38-08303b826a10",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "cf329781-de2c-404d-bac1-ebb060615a93:$LATEST"
+      },
+      "Identifier": "4b779da1-7701-4480-a51f-06c3313c04dd",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "d5c15e2b-c8e4-40b2-9f90-7f91393ede23",
+        "Errors": [
+          {
+            "NextAction": "d5c15e2b-c8e4-40b2-9f90-7f91393ede23",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "d5c15e2b-c8e4-40b2-9f90-7f91393ede23",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "QueueId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/queue/d1098329-5419-419b-b194-c0d38c5505c3"
+      },
+      "Identifier": "a696fabf-5401-4ab9-9c38-08303b826a10",
+      "Type": "UpdateContactTargetQueue",
+      "Transitions": {
+        "NextAction": "4b779da1-7701-4480-a51f-06c3313c04dd",
+        "Errors": [
+          {
+            "NextAction": "a4583526-6bc8-4358-af68-1cec65d9f769",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "QUEUE_CONFIGURATION_ERROR",
+          "error_message": "Queue configuration invalid",
+          "error_block": "SetWorkingQueue"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "a4583526-6bc8-4358-af68-1cec65d9f769",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "7d48cc90-c563-45df-a983-61a1e2ff0c8b",
+        "Errors": [
+          {
+            "NextAction": "7d48cc90-c563-45df-a983-61a1e2ff0c8b",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "7d48cc90-c563-45df-a983-61a1e2ff0c8b",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Text": "We're on high load right now, but we added you at short list, and we will rever as soon as possible with a call"
+      },
+      "Identifier": "3b4cbdac-79ce-41eb-975e-3933690bf987",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ce9f9feb-a343-49dd-8d6c-1d3934292340",
+        "Errors": [
+          {
+            "NextAction": "ce9f9feb-a343-49dd-8d6c-1d3934292340",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "QUEUE_TRANSFER_ERROR",
+          "error_message": "Failed to transfer to queue",
+          "error_block": "TransferToQueue"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "6f441ef7-25b1-40c2-87c5-cea600d6c2ef",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "ce9f9feb-a343-49dd-8d6c-1d3934292340",
+        "Errors": [
+          {
+            "NextAction": "ce9f9feb-a343-49dd-8d6c-1d3934292340",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "ce9f9feb-a343-49dd-8d6c-1d3934292340",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "PromptId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/prompt/68c9deb5-97cb-4420-ba97-065d868bdb08"
+      },
+      "Identifier": "f12f2721-fd17-4756-b644-0b86a5831a67",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ca6479fc-0921-4f15-b105-7fd51b7f1e93",
+        "Errors": [
+          {
+            "NextAction": "ca6479fc-0921-4f15-b105-7fd51b7f1e93",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "cf329781-de2c-404d-bac1-ebb060615a93:$LATEST"
+      },
+      "Identifier": "ca6479fc-0921-4f15-b105-7fd51b7f1e93",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "Set standard queue",
+        "Errors": [
+          {
+            "NextAction": "Set standard queue",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "Set standard queue",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "PromptId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/prompt/61c73085-d294-4aa8-9640-303ab0b24b1c"
+      },
+      "Identifier": "bc413bf2-2432-49e7-8f44-cfad29d5f198",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "ca6479fc-0921-4f15-b105-7fd51b7f1e93",
+        "Errors": [
+          {
+            "NextAction": "ca6479fc-0921-4f15-b105-7fd51b7f1e93",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "arn:aws:lambda:us-east-1:982389018170:function:cb-lmda-get-non-closed-cases-use1-stg",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "f176b5c4-85e3-453d-ac7e-76247ad9f44d",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "85392a22-b0c8-4e41-b81f-05e5d0300d3a",
+        "Errors": [
+          {
+            "NextAction": "9d47394e-9bfb-4101-a8f6-5f1ac2df3ee9",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "HoursOfOperationId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/operating-hours/dba9bc58-b423-43ee-b379-866f595f951e"
+      },
+      "Identifier": "Holidays",
+      "Type": "CheckHoursOfOperation",
+      "Transitions": {
+        "NextAction": "1a831396-b18a-439b-a562-7ccdc1dfd7a0",
+        "Conditions": [
+          {
+            "NextAction": "1a831396-b18a-439b-a562-7ccdc1dfd7a0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "True"
+              ]
+            }
+          },
+          {
+            "NextAction": "d3ef153f-fcb7-41c1-9664-08cca7b31dd5",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "False"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "1a831396-b18a-439b-a562-7ccdc1dfd7a0",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "cf329781-de2c-404d-bac1-ebb060615a93:$LATEST"
+      },
+      "Identifier": "e8834738-7df4-4dd9-b9ff-ce3b3931a6df",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "552eef60-5283-4e54-8127-1252c60f4a49",
+        "Errors": [
+          {
+            "NextAction": "552eef60-5283-4e54-8127-1252c60f4a49",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "552eef60-5283-4e54-8127-1252c60f4a49",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "holiday": "yes"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "d3ef153f-fcb7-41c1-9664-08cca7b31dd5",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "e8834738-7df4-4dd9-b9ff-ce3b3931a6df",
+        "Errors": [
+          {
+            "NextAction": "e8834738-7df4-4dd9-b9ff-ce3b3931a6df",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "IdentifierName": "_phone",
+          "IdentifierValue": "$.FlowAttributes.CallerNumber"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "5cda6ce9-b539-4959-8ee3-55b6ac4bb9d1",
+      "Type": "GetCustomerProfile",
+      "Transitions": {
+        "NextAction": "cee6d964-e9a4-4a0c-bac6-b340978ab036",
+        "Errors": [
+          {
+            "NextAction": "cee6d964-e9a4-4a0c-bac6-b340978ab036",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "a6661d7b-edea-46d9-8f5a-2c438847c34f",
+            "ErrorType": "MultipleFoundError"
+          },
+          {
+            "NextAction": "af424f21-9525-4272-9b93-ed18bb96a8d4",
+            "ErrorType": "NoneFoundError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "7c09c1ff-de9f-4045-bef3-3025630e5c65",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "f176b5c4-85e3-453d-ac7e-76247ad9f44d",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "e20905e9-ed7b-4c94-8a9d-e1e4441e91dc",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "Errored recall"
+      }
+    },
+    {
+      "Parameters": {
+        "HoursOfOperationId": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/operating-hours/f5ed8f24-b7b0-421f-ac38-996ff53549a7"
+      },
+      "Identifier": "1a831396-b18a-439b-a562-7ccdc1dfd7a0",
+      "Type": "CheckHoursOfOperation",
+      "Transitions": {
+        "NextAction": "Errored recall",
+        "Conditions": [
+          {
+            "NextAction": "a696fabf-5401-4ab9-9c38-08303b826a10",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "True"
+              ]
+            }
+          },
+          {
+            "NextAction": "e8834738-7df4-4dd9-b9ff-ce3b3931a6df",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "False"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "CallerNumber": {
+            "Value": "$.CustomerEndpoint.Address"
+          }
+        }
+      },
+      "Identifier": "552eef60-5283-4e54-8127-1252c60f4a49",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "5cda6ce9-b539-4959-8ee3-55b6ac4bb9d1",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "cases_any": "$.External.cases_any",
+          "case_id": "$.External.last_case_id",
+          "last_case_status": "$.External.last_case_status"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "85392a22-b0c8-4e41-b81f-05e5d0300d3a",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "7c4c7346-1d09-42ea-b5b2-ea5df52b76e2",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "49738ce2-4f96-4a8e-a36c-5984726b3640",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "LAMBDA_ERROR",
+          "error_message": "Lambda invocation failed",
+          "error_block": "$.External.AWSLambdaFunction"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "9d47394e-9bfb-4101-a8f6-5f1ac2df3ee9",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Errored recall",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.holiday"
+      },
+      "Identifier": "cb563c93-94be-4f4d-ab67-a22487e0ac94",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "bc413bf2-2432-49e7-8f44-cfad29d5f198",
+        "Conditions": [
+          {
+            "NextAction": "f12f2721-fd17-4756-b644-0b86a5831a67",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "yes"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "bc413bf2-2432-49e7-8f44-cfad29d5f198",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseId": "$.Attributes.case_id",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Voicemail",
+          "status": "New Voicemail"
+        }
+      },
+      "Identifier": "fc7d00a1-c1b3-42c8-bc72-db594b28fd42",
+      "Type": "UpdateCase",
+      "Transitions": {
+        "NextAction": "cb563c93-94be-4f4d-ab67-a22487e0ac94",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "case_id": "$.Case.case_id"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "ff5b5cb7-2b1c-4db3-bb83-b2b8cf9c60a8",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.cases_any"
+      },
+      "Identifier": "45897844-3785-4473-8701-b5c7311cfc6a",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+        "Conditions": [
+          {
+            "NextAction": "ffbfeebc-e70d-4fff-8f5a-0f7d67cd5bb3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          },
+          {
+            "NextAction": "1860aaba-84ec-463b-bce3-dffd51abf4e1",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "false"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "EventHooks": {
+          "CustomerQueue": "arn:aws:connect:us-east-1:982389018170:instance/dd965966-2f29-461e-bd8f-3b11e3ded261/contact-flow/9aba6315-2b28-4264-baf3-df25a07f0cb1"
+        }
+      },
+      "Identifier": "675541cb-8b07-4878-a502-e23421b836b2",
+      "Type": "UpdateContactEventHooks",
+      "Transitions": {
+        "NextAction": "be2f85f8-8407-42ad-af92-53f414172702",
+        "Errors": [
+          {
+            "NextAction": "be2f85f8-8407-42ad-af92-53f414172702",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseId": "$.Attributes.case_id",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Call"
+        }
+      },
+      "Identifier": "ffbfeebc-e70d-4fff-8f5a-0f7d67cd5bb3",
+      "Type": "UpdateCase",
+      "Transitions": {
+        "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "CUSTOMER_PROFILE_ERROR",
+          "error_message": "Multiple Customer profile found",
+          "error_block": "GetCustomerProfile"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "a6661d7b-edea-46d9-8f5a-2c438847c34f",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "052ef098-23f7-4811-9baa-35d8ed9f3a9e",
+        "Errors": [
+          {
+            "NextAction": "052ef098-23f7-4811-9baa-35d8ed9f3a9e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "dbb988ea-fefe-494d-834e-839253c28b04",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "a696fabf-5401-4ab9-9c38-08303b826a10"
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "IdentifierName": "_phone",
+          "IdentifierValue": "$.FlowAttributes.CallerNumber"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "c5456e9b-bb3e-4b59-8e8a-05e21ba41f84",
+      "Type": "GetCustomerProfile",
+      "Transitions": {
+        "NextAction": "589106e3-704e-4450-8ba5-aa0c56e43ee0",
+        "Errors": [
+          {
+            "NextAction": "09fc0a7d-fe1d-44e2-82e6-1b58df083faf",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "897646a0-b331-4965-9ef7-a0b2f0720c3d",
+            "ErrorType": "MultipleFoundError"
+          },
+          {
+            "NextAction": "5e0ee80b-b5be-402c-aa96-493806a88f8a",
+            "ErrorType": "NoneFoundError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseTemplateId": "b4fc2215-d414-4ec3-b235-d1f6a08e955e",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Call",
+          "customer_id": "$.Customer.ProfileARN",
+          "status": "open",
+          "title": "New Call"
+        }
+      },
+      "Identifier": "1860aaba-84ec-463b-bce3-dffd51abf4e1",
+      "Type": "CreateCase",
+      "Transitions": {
+        "NextAction": "ff5b5cb7-2b1c-4db3-bb83-b2b8cf9c60a8",
+        "Errors": [
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "675541cb-8b07-4878-a502-e23421b836b2",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "case_id": "$.Case.case_id"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "eae5d5f8-62c6-42fb-9ff0-f1f2414ab86f",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "cb563c93-94be-4f4d-ab67-a22487e0ac94",
+        "Errors": [
+          {
+            "NextAction": "cb563c93-94be-4f4d-ab67-a22487e0ac94",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.cases_any"
+      },
+      "Identifier": "7c4c7346-1d09-42ea-b5b2-ea5df52b76e2",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Errored recall",
+        "Conditions": [
+          {
+            "NextAction": "fc7d00a1-c1b3-42c8-bc72-db594b28fd42",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          },
+          {
+            "NextAction": "51e4caf2-ec4c-437a-ac39-5857208a096a",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "false"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Seems like we're facing issues while recording your data, please revert with a call during business hours."
+      },
+      "Identifier": "Errored recall",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "49738ce2-4f96-4a8e-a36c-5984726b3640",
+        "Errors": [
+          {
+            "NextAction": "49738ce2-4f96-4a8e-a36c-5984726b3640",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseTemplateId": "b4fc2215-d414-4ec3-b235-d1f6a08e955e",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "c7c5d3b4-305f-4fd6-96b8-63040eb09cff": "Voicemail",
+          "customer_id": "$.Customer.ProfileARN",
+          "status": "New Voicemail",
+          "title": "New Off-Hours Call"
+        }
+      },
+      "Identifier": "51e4caf2-ec4c-437a-ac39-5857208a096a",
+      "Type": "CreateCase",
+      "Transitions": {
+        "NextAction": "eae5d5f8-62c6-42fb-9ff0-f1f2414ab86f",
+        "Errors": [
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "Errored recall",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "FirstName": "Caller",
+          "PhoneNumber": "$.FlowAttributes.CallerNumber"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "af424f21-9525-4272-9b93-ed18bb96a8d4",
+      "Type": "CreateCustomerProfile",
+      "Transitions": {
+        "NextAction": "cd905c76-d873-47cd-aa8d-81fa5827ff2a",
+        "Errors": [
+          {
+            "NextAction": "e20905e9-ed7b-4c94-8a9d-e1e4441e91dc",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "cd905c76-d873-47cd-aa8d-81fa5827ff2a",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "052ef098-23f7-4811-9baa-35d8ed9f3a9e",
+        "Errors": [
+          {
+            "NextAction": "052ef098-23f7-4811-9baa-35d8ed9f3a9e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "052ef098-23f7-4811-9baa-35d8ed9f3a9e",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "51e4caf2-ec4c-437a-ac39-5857208a096a"
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "FirstName": "Caller",
+          "PhoneNumber": "$.FlowAttributes.CallerNumber"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "5e0ee80b-b5be-402c-aa96-493806a88f8a",
+      "Type": "CreateCustomerProfile",
+      "Transitions": {
+        "NextAction": "8b8335cd-e97a-40b6-9f33-a7774dea3ec8",
+        "Errors": [
+          {
+            "NextAction": "dbb988ea-fefe-494d-834e-839253c28b04",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "8b8335cd-e97a-40b6-9f33-a7774dea3ec8",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "aec26477-5413-425b-9524-29df8a3ffb9a",
+        "Errors": [
+          {
+            "NextAction": "aec26477-5413-425b-9524-29df8a3ffb9a",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "aec26477-5413-425b-9524-29df8a3ffb9a",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "1860aaba-84ec-463b-bce3-dffd51abf4e1"
+      }
+    }
+  ]
+}

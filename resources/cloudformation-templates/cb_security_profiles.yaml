@@ -1,0 +1,482 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: AWS Connect Security Profiles
+
+Parameters:
+  pConnectInstanceArn:
+    Type: String
+    Description: The ARN of the Connect instance
+
+  pCompanyPrefix:
+    Type: String
+    Description: The company prefix value
+
+  pEnvironment:
+    Type: String
+    Description: Deployment environment
+
+Resources:
+  rCBAdminProfile:
+    Type: AWS::Connect::SecurityProfile
+    DeletionPolicy: Delete
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      SecurityProfileName: cb_admin_profile
+      Description: An administrator can perform all actions available.
+      AllowedAccessControlTags: []
+      TagRestrictedResources: []
+      Tags:
+        - Key: company
+          Value: !Ref pCompanyPrefix
+      Permissions:
+        - AccessMetrics
+        - AccessMetrics.AgentActivityAudit.Access
+        - AccessMetrics.Dashboards.Access
+        - AccessMetrics.DashboardsWithMyData.View
+        - AccessMetrics.HistoricalMetrics.Access
+        - AccessMetrics.RealTimeMetrics.Access
+        - AgentGrouping.Create
+        - AgentGrouping.Edit
+        - AgentGrouping.EnableAndDisable
+        - AgentGrouping.View
+        - AgentStates.Create
+        - AgentStates.Edit
+        - AgentStates.EnableAndDisable
+        - AgentStates.View
+        - AgentTimeCard.View
+        - Analytics.PerformanceMetrics.Access
+        - AudioDeviceSettings.Access
+        - AutomatedVoiceInteraction.Recordings.Unredacted.Access
+        - AutomatedVoiceInteraction.Recordings.Unredacted.DownloadButton
+        - AutomatedVoiceInteraction.Transcripts.Unredacted.Access
+        - BasicAgentAccess
+        - Bots.Create
+        - Bots.Edit
+        - Bots.View
+        - CallRecordings.Redacted.Access
+        - CallRecordings.Redacted.DownloadButton
+        - CallRecordings.Unredacted.Access
+        - CallRecordings.Unredacted.DownloadButton
+        - Campaigns.Create
+        - Campaigns.Delete
+        - Campaigns.Edit
+        - Campaigns.Manage
+        - Campaigns.View
+        - Capacity.Edit
+        - Capacity.Publish
+        - Capacity.View
+        - CaseFields.Create
+        - CaseFields.Edit
+        - CaseFields.View
+        - CaseHistory.View
+        - CaseTemplates.Create
+        - CaseTemplates.Edit
+        - CaseTemplates.View
+        - Cases.Create
+        - Cases.Edit
+        - Cases.View
+        - ChatTestMode
+        - ConfigureContactAttributes.View
+        - ContactAttributes.View
+        - ContactFlowModules.Create
+        - ContactFlowModules.Delete
+        - ContactFlowModules.Edit
+        - ContactFlowModules.Publish
+        - ContactFlowModules.View
+        - ContactFlows.Create
+        - ContactFlows.Delete
+        - ContactFlows.Edit
+        - ContactFlows.Publish
+        - ContactFlows.View
+        - ContactLensCustomVocabulary.Edit
+        - ContactLensCustomVocabulary.View
+        - ContactLensPostContactSummary.View
+        - ContactSearch.View
+        - ContactSearchWithCharacteristics.View
+        - ContactSearchWithKeywords.View
+        - ContactTranscripts.Redacted.Access
+        - ContactTranscripts.Unredacted.Access
+        - ContactTranscripts.Unredacted.DownloadButton
+        - ContentManagement.Create
+        - ContentManagement.Delete
+        - ContentManagement.Edit
+        - ContentManagement.MessageTemplates.Create
+        - ContentManagement.MessageTemplates.Delete
+        - ContentManagement.MessageTemplates.Edit
+        - ContentManagement.MessageTemplates.View
+        - ContentManagement.View
+        - CustomMetrics.Create
+        - CustomMetrics.Delete
+        - CustomMetrics.Edit
+        - CustomMetrics.Publish
+        - CustomMetrics.View
+        - CustomViews.Access
+        - CustomerProfiles.CalculatedAttributes.Create
+        - CustomerProfiles.CalculatedAttributes.Delete
+        - CustomerProfiles.CalculatedAttributes.Edit
+        - CustomerProfiles.CalculatedAttributes.View
+        - CustomerProfiles.Create
+        - CustomerProfiles.Edit
+        - CustomerProfiles.ProfileExplorer.Create
+        - CustomerProfiles.ProfileExplorer.Delete
+        - CustomerProfiles.ProfileExplorer.Edit
+        - CustomerProfiles.ProfileExplorer.View
+        - CustomerProfiles.Segments.Create
+        - CustomerProfiles.Segments.Delete
+        - CustomerProfiles.Segments.Export
+        - CustomerProfiles.Segments.View
+        - CustomerProfiles.View
+        - DataTables.Create
+        - DataTables.Delete
+        - DataTables.Edit
+        - DataTables.View
+        - DeleteCallRecordings
+        - EmailAddresses.Create
+        - EmailAddresses.Edit
+        - EmailAddresses.Remove
+        - EmailAddresses.View
+        - Evaluation.Create
+        - Evaluation.Delete
+        - Evaluation.Edit
+        - Evaluation.View
+        - EvaluationAssistant.Access
+        - EvaluationCalibrationSessions.Create
+        - EvaluationCalibrationSessions.Delete
+        - EvaluationCalibrationSessions.Edit
+        - EvaluationCalibrationSessions.View
+        - EvaluationForms.Create
+        - EvaluationForms.Delete
+        - EvaluationForms.Edit
+        - EvaluationForms.View
+        - ForecastScheduleInterval.Edit
+        - ForecastScheduleInterval.View
+        - Forecasting.Edit
+        - Forecasting.Publish
+        - Forecasting.View
+        - GraphTrends.View
+        - HistoricalChanges.View
+        - HoursOfOperation.Create
+        - HoursOfOperation.Delete
+        - HoursOfOperation.Edit
+        - HoursOfOperation.View
+        - ManagerBargeIn
+        - ManagerListenIn
+        - ManualAssignAnyContact.Enable
+        - ManualAssignMyContacts.Enable
+        - MetricsReports.Create
+        - MetricsReports.Delete
+        - MetricsReports.Edit
+        - MetricsReports.Publish
+        - MetricsReports.Schedule
+        - MetricsReports.View
+        - MyContacts.View
+        - OutboundCallAccess
+        - OutboundEmail.Create
+        - PhoneNumbers.Claim
+        - PhoneNumbers.Edit
+        - PhoneNumbers.Release
+        - PhoneNumbers.View
+        - PredefinedAttributes.Create
+        - PredefinedAttributes.Delete
+        - PredefinedAttributes.Edit
+        - PredefinedAttributes.View
+        - Prompts.Create
+        - Prompts.Delete
+        - Prompts.Edit
+        - Prompts.View
+        - QConnectAIAgents.Create
+        - QConnectAIAgents.Delete
+        - QConnectAIAgents.Edit
+        - QConnectAIAgents.View
+        - QConnectAIPrompts.Create
+        - QConnectAIPrompts.Delete
+        - QConnectAIPrompts.Edit
+        - QConnectAIPrompts.View
+        - QConnectGuardrails.Create
+        - QConnectGuardrails.Delete
+        - QConnectGuardrails.Edit
+        - QConnectGuardrails.View
+        - Queues.Create
+        - Queues.Delete
+        - Queues.Edit
+        - Queues.EnableAndDisable
+        - Queues.View
+        - RealtimeContactLens.View
+        - ReportSchedules.Create
+        - ReportSchedules.Delete
+        - ReportSchedules.Edit
+        - ReportSchedules.View
+        - ReportsAdmin.Access
+        - ReportsAdmin.Delete
+        - ReportsAdmin.Publish
+        - ReportsAdmin.Schedule
+        - ReportsAdmin.View
+        - RoutingPolicies.Create
+        - RoutingPolicies.Delete
+        - RoutingPolicies.Edit
+        - RoutingPolicies.View
+        - Rules.Create
+        - Rules.Delete
+        - Rules.Edit
+        - Rules.View
+        - RulesGenerativeAI.Create
+        - RulesGenerativeAI.Delete
+        - RulesGenerativeAI.Edit
+        - RulesGenerativeAI.View
+        - Scheduling.Edit
+        - Scheduling.Publish
+        - Scheduling.View
+        - ScreenRecording.Access
+        - ScreenRecording.Delete
+        - ScreenRecording.Download
+        - SecurityProfiles.Create
+        - SecurityProfiles.Delete
+        - SecurityProfiles.Edit
+        - SecurityProfiles.View
+        - SelfAssignContacts.Access
+        - StaffCalendar.Edit
+        - StaffCalendar.View
+        - StopContact.Enabled
+        - TaskTemplates.Create
+        - TaskTemplates.Delete
+        - TaskTemplates.Edit
+        - TaskTemplates.View
+        - TeamCalendar.Edit
+        - TeamCalendar.View
+        - TimeOff.Approve
+        - TimeOff.Edit
+        - TimeOff.View
+        - TimeOffBalance.Edit
+        - TimeOffBalance.View
+        - TransferContact.Enabled
+        - TransferDestinations.Create
+        - TransferDestinations.Delete
+        - TransferDestinations.Edit
+        - TransferDestinations.View
+        - UpdateContactSchedule.Enabled
+        - Users.Create
+        - Users.Delete
+        - Users.Edit
+        - Users.EditPermission
+        - Users.View
+        - VideoContact.Access
+        - Views.Create
+        - Views.Edit
+        - Views.Remove
+        - Views.View
+        - VoiceId.Access
+        - VoiceIdAttributesAndSearch.View
+        - Wisdom.View
+        - Workspaces.Assign
+        - Workspaces.Create
+        - Workspaces.Delete
+        - Workspaces.Edit
+        - Workspaces.EditVisibility
+        - Workspaces.View
+      Applications:
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "sms-referral-${pEnvironment}"
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "case-management-${pEnvironment}"
+          
+  rCBAgentProfile:
+    Type: AWS::Connect::SecurityProfile
+    DeletionPolicy: Delete
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      SecurityProfileName: cb_agent_profile
+      Description: An agent security profile with permissions suitable for a general Navigators.
+      AllowedAccessControlTags: []
+      TagRestrictedResources: []
+      Tags:
+        - Key: company
+          Value: !Ref pCompanyPrefix
+      Permissions:
+        - AgentStates.View
+        - AudioDeviceSettings.Access
+        - BasicAgentAccess
+        - AutomatedVoiceInteraction.Recordings.Unredacted.Access
+        - AutomatedVoiceInteraction.Recordings.Unredacted.DownloadButton
+        - AutomatedVoiceInteraction.Transcripts.Unredacted.Access
+        - CallRecordings.Redacted.Access
+        - CallRecordings.Redacted.DownloadButton
+        - CallRecordings.Unredacted.Access
+        - CallRecordings.Unredacted.DownloadButton
+        - CaseHistory.View
+        - Cases.Create
+        - Cases.Edit
+        - Cases.View
+        - ContactSearch.View
+        - ContactAttributes.View
+        - ContactTranscripts.Redacted.Access
+        - ContactTranscripts.Unredacted.Access
+        - ContactTranscripts.Unredacted.DownloadButton
+        - CustomViews.Access
+        - CustomerProfiles.Create
+        - CustomerProfiles.Edit
+        - CustomerProfiles.ProfileExplorer.Edit
+        - CustomerProfiles.ProfileExplorer.View
+        - CustomerProfiles.View
+        - HistoricalChanges.View
+        - OutboundCallAccess
+        - OutboundEmail.Create
+        - SelfAssignContacts.Access
+        - TransferContact.Enabled
+        - Users.View
+      Applications:
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "sms-referral-${pEnvironment}"
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "case-management-${pEnvironment}"
+
+  rCBCallCenterManagerProfile:
+    Type: AWS::Connect::SecurityProfile
+    DeletionPolicy: Delete
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      SecurityProfileName: cb_call_center_manager_profile
+      Description: A call center manager can view real-time metrics, historical metrics, and agent activity, as well as manage agents and queues.
+      AllowedAccessControlTags: []
+      TagRestrictedResources: []
+      Tags:
+        - Key: company
+          Value: !Ref pCompanyPrefix
+      Permissions:
+        - AccessMetrics.AgentActivityAudit.Access
+        - AccessMetrics.DashboardsWithMyData.View
+        - AccessMetrics.HistoricalMetrics.Access
+        - AccessMetrics.RealTimeMetrics.Access
+        - AgentStates.View
+        - AgentTimeCard.View
+        - BasicAgentAccess
+        - ConfigureContactAttributes.View
+        - ContactAttributes.View
+        - ContactSearch.View
+        - CustomViews.Access
+        - DownloadCallRecordings
+        - ListenCallRecordings
+        - ManagerBargeIn
+        - ManagerListenIn
+        - MetricsReports.Create
+        - MetricsReports.Delete
+        - MetricsReports.Edit
+        - MetricsReports.Publish
+        - MetricsReports.Schedule
+        - MetricsReports.View
+        - OutboundCallAccess
+        - Queues.View
+        - RealtimeContactLens.View
+        - RedactedData.View
+        - ReportSchedules.Create
+        - ReportSchedules.Delete
+        - ReportSchedules.Edit
+        - ReportSchedules.View
+        - RestrictContactAccessByHierarchy.View
+        - RestrictTaskCreation.Access
+        - RoutingPolicies.View
+        - SelfAssignContacts.Access
+        - TransferContact.Enabled
+        - Users.Edit
+        - Users.View
+      Applications:
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "sms-referral-${pEnvironment}"
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "case-management-${pEnvironment}"
+
+  rCBQAProfile:
+    Type: AWS::Connect::SecurityProfile
+    DeletionPolicy: Delete
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      SecurityProfileName: cb_qa_profile
+      Description: A quality analyst works to improve the customer experience and keeps track of live service metrics.
+      AllowedAccessControlTags: []
+      TagRestrictedResources: []
+      Tags:
+        - Key: company
+          Value: !Ref pCompanyPrefix
+      Permissions:
+        - AccessMetrics
+        - AccessMetrics.AgentActivityAudit.Access
+        - AccessMetrics.Dashboards.Access
+        - AccessMetrics.DashboardsWithMyData.View
+        - AccessMetrics.HistoricalMetrics.Access
+        - AccessMetrics.RealTimeMetrics.Access
+        - AgentTimeCard.View
+        - Analytics.PerformanceMetrics.Access
+        - Campaigns.Create
+        - Campaigns.Delete
+        - Campaigns.Edit
+        - Campaigns.Manage
+        - Campaigns.View
+        - Capacity.Edit
+        - Capacity.Publish
+        - Capacity.View
+        - CaseFields.Create
+        - CaseFields.Edit
+        - CaseFields.View
+        - CaseHistory.View
+        - CaseTemplates.Create
+        - CaseTemplates.Edit
+        - CaseTemplates.View
+        - Cases.View
+        - ConfigureContactAttributes.View
+        - ContactAttributes.View
+        - ContactSearch.View
+        - ContactSearchWithCharacteristics.View
+        - ContactSearchWithKeywords.View
+        - CustomMetrics.Create
+        - CustomMetrics.Delete
+        - CustomMetrics.Edit
+        - CustomMetrics.Publish
+        - CustomMetrics.View
+        - CustomViews.Access
+        - CustomerProfiles.CalculatedAttributes.Create
+        - CustomerProfiles.CalculatedAttributes.Delete
+        - CustomerProfiles.CalculatedAttributes.Edit
+        - CustomerProfiles.CalculatedAttributes.View
+        - CustomerProfiles.PredictiveInsights.Create
+        - CustomerProfiles.PredictiveInsights.Delete
+        - CustomerProfiles.PredictiveInsights.Edit
+        - CustomerProfiles.PredictiveInsights.View
+        - CustomerProfiles.ProfileExplorer.Create
+        - CustomerProfiles.ProfileExplorer.Delete
+        - CustomerProfiles.ProfileExplorer.Edit
+        - CustomerProfiles.ProfileExplorer.View
+        - CustomerProfiles.Segments.Create
+        - CustomerProfiles.Segments.Delete
+        - CustomerProfiles.Segments.Export
+        - CustomerProfiles.Segments.View
+        - CustomerProfiles.View
+        - Forecasting.Edit
+        - Forecasting.Publish
+        - Forecasting.View
+        - MetricsReports.Create
+        - MetricsReports.Delete
+        - MetricsReports.Edit
+        - MetricsReports.Publish
+        - MetricsReports.Schedule
+        - MetricsReports.View
+        - MyContacts.View
+        - ReportSchedules.Create
+        - ReportSchedules.Delete
+        - ReportSchedules.Edit
+        - ReportSchedules.View
+        - ReportsAdmin.Access
+        - ReportsAdmin.Delete
+        - ReportsAdmin.Publish
+        - ReportsAdmin.Schedule
+        - ReportsAdmin.View
+      Applications:
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "sms-referral-${pEnvironment}"
+        - ApplicationPermissions:
+            - ACCESS
+          Namespace: !Sub "case-management-${pEnvironment}"

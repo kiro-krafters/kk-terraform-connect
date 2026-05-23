@@ -1,0 +1,1666 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "f4918059-2d96-4206-b1e5-a1ccaa2c83a6",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -4089.6,
+      "y": 668
+    },
+    "ActionMetadata": {
+      "9fd9dc5b-bd16-49a8-bf3a-a3122b64751e": {
+        "position": {
+          "x": -1889.6,
+          "y": 872
+        }
+      },
+      "d883faee-1d9a-49f1-9c6b-b9c675a513b0": {
+        "position": {
+          "x": -198.4,
+          "y": 381.6
+        }
+      },
+      "e88e59ae-e52e-46eb-8400-c0726d9dc6d0": {
+        "position": {
+          "x": -842.4,
+          "y": 508.8
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "1fc82a54-6de5-4e6d-a4f9-e4447a724385",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "done"
+          },
+          {
+            "id": "10254f08-d892-49fe-9e7d-b109348207b3",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "done_without_message"
+          }
+        ]
+      },
+      "89eeb96a-7f50-46c6-90c7-5703bba2e897": {
+        "position": {
+          "x": -559.2,
+          "y": 372.8
+        }
+      },
+      "ac06f373-1034-4cce-8656-9ab2b3fa399d": {
+        "position": {
+          "x": -546.4,
+          "y": 692.8
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "f968d104-86a8-44b0-a906-af6b0dab1205": {
+        "position": {
+          "x": 237.6,
+          "y": 797.6
+        }
+      },
+      "586044b3-5867-4f7a-96f0-4d952e972e0d": {
+        "position": {
+          "x": 283.2,
+          "y": 238.4
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "get_non_closed_cases"
+          }
+        },
+        "dynamicMetadata": {}
+      },
+      "e6bb0602-fd5a-479a-ba8f-4e92e3344184": {
+        "position": {
+          "x": -73.6,
+          "y": 599.2
+        }
+      },
+      "0a47f11a-a2ce-466b-8325-021e79761c7a": {
+        "position": {
+          "x": 56,
+          "y": 253.6
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      },
+      "bb4094bb-ac73-4ed1-a0cc-17b7121bb2f0": {
+        "position": {
+          "x": 493.6,
+          "y": 106.4
+        },
+        "parameters": {
+          "Attributes": {
+            "cases_any": {
+              "useDynamic": true
+            },
+            "case_id": {
+              "useDynamic": true
+            },
+            "last_case_status": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "cases_any",
+          "case_id",
+          "last_case_status"
+        ]
+      },
+      "a8b15729-7286-4474-89b5-532c3b5f2b6c": {
+        "position": {
+          "x": 2576,
+          "y": 514.4
+        }
+      },
+      "86c511d8-97bb-47b4-b73e-16521669f019": {
+        "position": {
+          "x": -786.4,
+          "y": 1421.6
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "eb1f5b0c-34dc-4938-9ac0-d17acc1f41a6",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "need_name"
+          },
+          {
+            "id": "ca675a33-fd60-4737-8d8c-f25d2dd859a2",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "need_phone_choice"
+          },
+          {
+            "id": "26758d8f-80e9-4bb9-807e-61e2dc8f111f",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "need_phone"
+          }
+        ]
+      },
+      "e11182d8-1f6d-4110-91d0-be1587ca6700": {
+        "position": {
+          "x": -264,
+          "y": 1176.8
+        }
+      },
+      "c9cb6617-9d79-4ffd-80df-f3164146bfe9": {
+        "position": {
+          "x": 216,
+          "y": 1204.8
+        }
+      },
+      "f235f242-bd2b-44ed-9318-1adc1bb39e8a": {
+        "position": {
+          "x": 615.2,
+          "y": 1245.6
+        }
+      },
+      "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0": {
+        "position": {
+          "x": 1012,
+          "y": 1513.6
+        }
+      },
+      "d7ee2fec-32a1-41b0-b455-a9e841bc4cb0": {
+        "position": {
+          "x": -480.8,
+          "y": 1321.6
+        }
+      },
+      "276bc722-ea39-4cb4-be09-46983d808831": {
+        "position": {
+          "x": -64.8,
+          "y": 1389.6
+        }
+      },
+      "81d98f7a-5acc-4fe5-a554-06cc3142c92b": {
+        "position": {
+          "x": 356.8,
+          "y": 1477.6
+        }
+      },
+      "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b": {
+        "position": {
+          "x": 737.6,
+          "y": 1685.6
+        }
+      },
+      "4d313b17-95e7-4962-bb75-e42ddff26567": {
+        "position": {
+          "x": -317.6,
+          "y": 716.8
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "IdentifierName": {
+              "displayName": "Phone"
+            },
+            "IdentifierValue": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "IdentifierName": true,
+          "IdentifierValue": true
+        },
+        "customerProfilesAction": "GetCustomerProfile"
+      },
+      "66e18714-092b-4320-93e5-263f4f44b62e": {
+        "position": {
+          "x": -618.4,
+          "y": 972.8
+        },
+        "dynamicParams": []
+      },
+      "e2ce49dd-ebb1-4838-8a46-b8179aa9ae80": {
+        "position": {
+          "x": 484,
+          "y": 786.4
+        },
+        "dynamicParams": []
+      },
+      "0ddba143-c89d-4db0-a26a-fe0ffe5ba0a4": {
+        "position": {
+          "x": 784,
+          "y": 335.2
+        },
+        "dynamicParams": []
+      },
+      "fde2ae64-6c90-48fa-a1d4-17aca73689ab": {
+        "position": {
+          "x": 759.2,
+          "y": 686.4
+        }
+      },
+      "9bc316ea-8cc7-47dc-b236-b30ce17dba90": {
+        "position": {
+          "x": 2306.4,
+          "y": 524
+        }
+      },
+      "3c1485d8-001f-47e4-9a67-1bb73b34a246": {
+        "position": {
+          "x": 1989.6,
+          "y": -72.8
+        }
+      },
+      "d0d5ed0d-1217-4518-a733-5efa60b5140b": {
+        "position": {
+          "x": -2140.8,
+          "y": 748
+        },
+        "parameters": {
+          "TimeLimitSeconds": {
+            "unit": 1
+          }
+        },
+        "timeoutUnit": {
+          "display": "Seconds",
+          "value": "second"
+        }
+      },
+      "error play prompt": {
+        "position": {
+          "x": 1376,
+          "y": 1070.4
+        },
+        "isFriendlyName": true
+      },
+      "f4918059-2d96-4206-b1e5-a1ccaa2c83a6": {
+        "position": {
+          "x": -3849.6,
+          "y": 652.8
+        }
+      },
+      "d3bbf6e2-4c58-450c-9ca7-4a40b65f5795": {
+        "position": {
+          "x": -1079.2,
+          "y": 584.8
+        }
+      },
+      "b5b2947c-f4c2-4e55-b043-1ff2cf120e65": {
+        "position": {
+          "x": -910.4,
+          "y": 768.8
+        }
+      },
+      "ccb659d5-fd1e-436b-8844-bc590c1de68a": {
+        "position": {
+          "x": -1038.4,
+          "y": 1166.4
+        }
+      },
+      "93ba5e8d-bea9-42da-8271-76f607045529": {
+        "position": {
+          "x": -1621.6,
+          "y": 832.8
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "9f8a41a2-8194-4d99-9504-41a7e273c7f4": {
+        "position": {
+          "x": -1346.4,
+          "y": 629.6
+        },
+        "parameters": {
+          "Text": {
+            "useDynamic": true
+          },
+          "LexV2Bot": {
+            "AliasArn": {
+              "displayName": "TestBotAlias",
+              "useLexBotDropdown": true,
+              "lexV2BotName": "IntakeBot-SBX"
+            }
+          },
+          "LexSessionAttributes": {
+            "customer_number": {
+              "useDynamic": true
+            },
+            "connect_contact_id": {
+              "useDynamic": true
+            }
+          },
+          "LexTimeoutSeconds": {
+            "Text": {
+              "unit": 60
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "customer_number": true,
+          "connect_instance_id": false,
+          "connect_contact_id": true
+        },
+        "useLexBotDropdown": true,
+        "lexV2BotName": "IntakeBot-SBX",
+        "lexV2BotAliasName": "TestBotAlias",
+        "useDynamic": true,
+        "conditionMetadata": [
+          {
+            "id": "538666ab-733a-44de-9827-ddf1d90d65fc",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "IntakeForm"
+          },
+          {
+            "id": "d475d16e-e74a-479c-a940-93f92f4f87e4",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "FallbackIntent"
+          }
+        ]
+      },
+      "ed7cf5d8-a4f3-4bb7-8296-146a46b47ce8": {
+        "position": {
+          "x": -3528.8,
+          "y": 644
+        }
+      },
+      "42ecad54-c047-4093-a13a-4c077b108ab9": {
+        "position": {
+          "x": -2431.2,
+          "y": 610.4
+        }
+      },
+      "71fce6bd-cda6-4bca-9b9e-e854c856d052": {
+        "position": {
+          "x": -3202.4,
+          "y": 517.6
+        },
+        "parameters": {
+          "LambdaFunctionARN": {
+            "displayName": "inbound-sms-tracking"
+          },
+          "LambdaInvocationAttributes": {
+            "customerNumber": {
+              "useDynamic": true
+            },
+            "customerSMS": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicMetadata": {
+          "customerNumber": true,
+          "customerSMS": true
+        }
+      },
+      "2b0aaa26-0ef6-4c3b-b626-5660e4edd013": {
+        "position": {
+          "x": -2288.8,
+          "y": 264
+        }
+      },
+      "is first time user": {
+        "position": {
+          "x": -2842.4,
+          "y": 511.2
+        },
+        "isFriendlyName": true,
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "1f0e1203-4f7b-467e-9a67-8850ca29fbb7",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          },
+          {
+            "id": "5b6624eb-8c37-4ae9-b42b-3e8e539f9887",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "false"
+          }
+        ]
+      },
+      "0a4e11fc-235d-4d45-a912-b77eeec7eef3": {
+        "position": {
+          "x": -2552.8,
+          "y": 323.2
+        }
+      },
+      "b9fc3f59-4b59-4e16-86c9-7f09689a2a5c": {
+        "position": {
+          "x": 996,
+          "y": -51.2
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "da3cc2e4-1a73-4c0f-82aa-8c0dae3dfbc2": {
+        "position": {
+          "x": 1509.6,
+          "y": -112
+        },
+        "parameters": {
+          "Attributes": {
+            "case_id": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "case_id"
+        ]
+      },
+      "61b042ab-d2aa-4f18-a08e-40d25f90f750": {
+        "position": {
+          "x": 1800.8,
+          "y": 235.2
+        }
+      },
+      "e0f56dac-2ed8-4301-819a-a358f79980b6": {
+        "position": {
+          "x": 716,
+          "y": 1.6
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "d8998514-4cc8-4148-beee-9f6f66d8db3e",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          },
+          {
+            "id": "837671a4-7e89-418b-b241-4cacb8df2156",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "false"
+          }
+        ]
+      },
+      "77054172-f6c2-43c6-ad9e-65b7d3778d28": {
+        "position": {
+          "x": 1756.8,
+          "y": -84.8
+        },
+        "parameters": {
+          "FlowModuleId": {
+            "displayName": "cb_apply_masking_module",
+            "Alias": {
+              "displayName": "$LATEST"
+            }
+          }
+        },
+        "contactFlowModuleName": "cb_apply_masking_module"
+      },
+      "bc379b36-85e3-4d40-8c38-9d12872308ec": {
+        "position": {
+          "x": 1369.6,
+          "y": 195.2
+        },
+        "parameters": {
+          "CaseRequestFields": {
+            "${latest_contact_type_field_id}": {
+              "displayName": "SMS"
+            }
+          },
+          "caseId": {
+            "useDynamic": true
+          }
+        },
+        "action": "updateCaseAction",
+        "requestFieldsOptions": {
+          "${latest_contact_type_field_id}": "SMS"
+        }
+      },
+      "6a550671-e0b9-4940-8480-02643e898e2b": {
+        "position": {
+          "x": 258.4,
+          "y": 484
+        },
+        "parameters": {
+          "ProfileRequestData": {
+            "FirstName": {
+              "useDynamic": true
+            },
+            "PhoneNumber": {
+              "useDynamic": true
+            }
+          }
+        },
+        "useDynamic": {
+          "FirstName": true,
+          "PhoneNumber": true
+        },
+        "customerProfilesAction": "CreateCustomerProfile"
+      },
+      "30dc2433-d78e-4503-a8a6-746662880dfe": {
+        "position": {
+          "x": 1276,
+          "y": -47.2
+        },
+        "parameters": {
+          "CaseTemplateId": {
+            "displayName": "cb_general_support_template"
+          },
+          "CaseRequestFields": {
+            "${latest_contact_type_field_id}": {
+              "displayName": "SMS"
+            },
+            "customer_id": {
+              "useDynamic": true
+            },
+            "status": {
+              "displayName": "Open"
+            }
+          }
+        },
+        "action": "createCaseAction",
+        "templateName": "cb_general_support_template",
+        "requestFieldsOptions": {
+          "${latest_contact_type_field_id}": "SMS",
+          "status": "Open"
+        },
+        "requiredFieldsOptions": []
+      },
+      "e65043bf-ba9e-42b7-b43e-48ee7c0af4dd": {
+        "position": {
+          "x": 996.8,
+          "y": 493.6
+        },
+        "parameters": {
+          "Attributes": {
+            "ProfileArn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "ProfileArn"
+        ]
+      }
+    },
+    "Annotations": [],
+    "name": "cb_sms_inbound_flow",
+    "description": "SMS inbound flow for Bridge Connect.",
+    "type": "contactFlow",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "Text": "To get connected with a trained Navigator, reply YES."
+      },
+      "Identifier": "9fd9dc5b-bd16-49a8-bf3a-a3122b64751e",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+        "Errors": [
+          {
+            "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "d883faee-1d9a-49f1-9c6b-b9c675a513b0",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Lex.SessionAttributes.stage"
+      },
+      "Identifier": "e88e59ae-e52e-46eb-8400-c0726d9dc6d0",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "89eeb96a-7f50-46c6-90c7-5703bba2e897",
+        "Conditions": [
+          {
+            "NextAction": "ac06f373-1034-4cce-8656-9ab2b3fa399d",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "done"
+              ]
+            }
+          },
+          {
+            "NextAction": "d883faee-1d9a-49f1-9c6b-b9c675a513b0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "done_without_message"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "89eeb96a-7f50-46c6-90c7-5703bba2e897",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "We didn't quite catch that. Please give us a call at 800-944-1807 to speak with a Navigator."
+      },
+      "Identifier": "89eeb96a-7f50-46c6-90c7-5703bba2e897",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "d883faee-1d9a-49f1-9c6b-b9c675a513b0",
+        "Errors": [
+          {
+            "NextAction": "d883faee-1d9a-49f1-9c6b-b9c675a513b0",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "${cb_masking_flow_module_id}:$LATEST"
+      },
+      "Identifier": "ac06f373-1034-4cce-8656-9ab2b3fa399d",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "4d313b17-95e7-4962-bb75-e42ddff26567",
+        "Errors": [
+          {
+            "NextAction": "4d313b17-95e7-4962-bb75-e42ddff26567",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "4d313b17-95e7-4962-bb75-e42ddff26567",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "f968d104-86a8-44b0-a906-af6b0dab1205",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "e2ce49dd-ebb1-4838-8a46-b8179aa9ae80"
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${get_non_closed_cases_lambda_arn}",
+        "InvocationTimeLimitSeconds": "3",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "586044b3-5867-4f7a-96f0-4d952e972e0d",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "bb4094bb-ac73-4ed1-a0cc-17b7121bb2f0",
+        "Errors": [
+          {
+            "NextAction": "0ddba143-c89d-4db0-a26a-fe0ffe5ba0a4",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "e6bb0602-fd5a-479a-ba8f-4e92e3344184",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "0a47f11a-a2ce-466b-8325-021e79761c7a"
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "0a47f11a-a2ce-466b-8325-021e79761c7a",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "586044b3-5867-4f7a-96f0-4d952e972e0d",
+        "Errors": [
+          {
+            "NextAction": "586044b3-5867-4f7a-96f0-4d952e972e0d",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "cases_any": "$.External.cases_any",
+          "case_id": "$.External.last_case_id",
+          "last_case_status": "$.External.last_case_status"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "bb4094bb-ac73-4ed1-a0cc-17b7121bb2f0",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "e0f56dac-2ed8-4301-819a-a358f79980b6",
+        "Errors": [
+          {
+            "NextAction": "e0f56dac-2ed8-4301-819a-a358f79980b6",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "a8b15729-7286-4474-89b5-532c3b5f2b6c",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.stage"
+      },
+      "Identifier": "86c511d8-97bb-47b4-b73e-16521669f019",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0",
+        "Conditions": [
+          {
+            "NextAction": "d7ee2fec-32a1-41b0-b455-a9e841bc4cb0",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "need_name"
+              ]
+            }
+          },
+          {
+            "NextAction": "276bc722-ea39-4cb4-be09-46983d808831",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "need_phone_choice"
+              ]
+            }
+          },
+          {
+            "NextAction": "81d98f7a-5acc-4fe5-a554-06cc3142c92b",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "need_phone"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Hi, we are looking forward to helping you. Please let us know your first name or nickname."
+      },
+      "Identifier": "e11182d8-1f6d-4110-91d0-be1587ca6700",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+        "Errors": [
+          {
+            "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Hi, we look forward to helping you. Please let us know if we can call you on this number. Reply YES or NO"
+      },
+      "Identifier": "c9cb6617-9d79-4ffd-80df-f3164146bfe9",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+        "Errors": [
+          {
+            "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Hi, we are looking forward to helping you. Let us know what number we can call you at. Please reply with the 10 digit number."
+      },
+      "Identifier": "f235f242-bd2b-44ed-9318-1adc1bb39e8a",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+        "Errors": [
+          {
+            "NextAction": "93ba5e8d-bea9-42da-8271-76f607045529",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "LoopCount": "1"
+      },
+      "Identifier": "d7ee2fec-32a1-41b0-b455-a9e841bc4cb0",
+      "Type": "Loop",
+      "Transitions": {
+        "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+        "Conditions": [
+          {
+            "NextAction": "e11182d8-1f6d-4110-91d0-be1587ca6700",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ContinueLooping"
+              ]
+            }
+          },
+          {
+            "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "DoneLooping"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LoopCount": "1"
+      },
+      "Identifier": "276bc722-ea39-4cb4-be09-46983d808831",
+      "Type": "Loop",
+      "Transitions": {
+        "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+        "Conditions": [
+          {
+            "NextAction": "c9cb6617-9d79-4ffd-80df-f3164146bfe9",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ContinueLooping"
+              ]
+            }
+          },
+          {
+            "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "DoneLooping"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LoopCount": "1"
+      },
+      "Identifier": "81d98f7a-5acc-4fe5-a554-06cc3142c92b",
+      "Type": "Loop",
+      "Transitions": {
+        "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+        "Conditions": [
+          {
+            "NextAction": "f235f242-bd2b-44ed-9318-1adc1bb39e8a",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "ContinueLooping"
+              ]
+            }
+          },
+          {
+            "NextAction": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "DoneLooping"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "It seems you have stepped away from your phone. You can text us back anytime or call us at 800-944-1807 to get connected to a Navigator."
+      },
+      "Identifier": "cd4ede5f-227d-4b32-a1a6-ff75d6b0238b",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0",
+        "Errors": [
+          {
+            "NextAction": "b61bc864-d2d5-43a9-8b2a-590a4df9dfc0",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "IdentifierName": "_phone",
+          "IdentifierValue": "$.Lex.Slots.phone"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "4d313b17-95e7-4962-bb75-e42ddff26567",
+      "Type": "GetCustomerProfile",
+      "Transitions": {
+        "NextAction": "e6bb0602-fd5a-479a-ba8f-4e92e3344184",
+        "Errors": [
+          {
+            "NextAction": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "f968d104-86a8-44b0-a906-af6b0dab1205",
+            "ErrorType": "MultipleFoundError"
+          },
+          {
+            "NextAction": "6a550671-e0b9-4940-8480-02643e898e2b",
+            "ErrorType": "NoneFoundError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "LEX_BOT_ERROR",
+          "error_message": "Lex bot intent processing failed",
+          "error_block": "GetCustomerInput"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "66e18714-092b-4320-93e5-263f4f44b62e",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "error play prompt",
+        "Errors": [
+          {
+            "NextAction": "error play prompt",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "CUSTOMER_PROFILE_ERROR",
+          "error_message": "Multiple Customer profile found",
+          "error_block": "GetCustomerProfile"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "e2ce49dd-ebb1-4838-8a46-b8179aa9ae80",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "error play prompt",
+        "Errors": [
+          {
+            "NextAction": "error play prompt",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "error_type": "LAMBDA_ERROR",
+          "error_message": "Lambda invocation failed",
+          "error_block": "AWSLambdaFunction"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "0ddba143-c89d-4db0-a26a-fe0ffe5ba0a4",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "error play prompt",
+        "Errors": [
+          {
+            "NextAction": "error play prompt",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "fde2ae64-6c90-48fa-a1d4-17aca73689ab",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "error play prompt"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "a8b15729-7286-4474-89b5-532c3b5f2b6c"
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Great. Thanks, $.Lex.Slots.firstname!\n\nA CA Bridge Connect Navigator will give you a call as soon as possible during our regular hours (Monday–Friday, 9am–5pm PT).\n\nIn the meantime, if you’re in crisis or need emergency help, please call 911.\n\nYou’re not alone. We’ve got you."
+      },
+      "Identifier": "3c1485d8-001f-47e4-9a67-1bb73b34a246",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+        "Errors": [
+          {
+            "NextAction": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "TimeLimitSeconds": "1"
+      },
+      "Identifier": "d0d5ed0d-1217-4518-a733-5efa60b5140b",
+      "Type": "Wait",
+      "Transitions": {
+        "NextAction": "9fd9dc5b-bd16-49a8-bf3a-a3122b64751e",
+        "Conditions": [
+          {
+            "NextAction": "9fd9dc5b-bd16-49a8-bf3a-a3122b64751e",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "WaitCompleted"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "9fd9dc5b-bd16-49a8-bf3a-a3122b64751e",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "We’re having some technical difficulties. Give us a call at 800-944-1807 to talk to a Navigator"
+      },
+      "Identifier": "error play prompt",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+        "Errors": [
+          {
+            "NextAction": "9bc316ea-8cc7-47dc-b236-b30ce17dba90",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "f4918059-2d96-4206-b1e5-a1ccaa2c83a6",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "ed7cf5d8-a4f3-4bb7-8296-146a46b47ce8"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "d3bbf6e2-4c58-450c-9ca7-4a40b65f5795",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "e88e59ae-e52e-46eb-8400-c0726d9dc6d0"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "b5b2947c-f4c2-4e55-b043-1ff2cf120e65",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "66e18714-092b-4320-93e5-263f4f44b62e"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "ccb659d5-fd1e-436b-8844-bc590c1de68a",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "86c511d8-97bb-47b4-b73e-16521669f019"
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "${cb_masking_flow_module_id}:$LATEST"
+      },
+      "Identifier": "93ba5e8d-bea9-42da-8271-76f607045529",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "9f8a41a2-8194-4d99-9504-41a7e273c7f4",
+        "Errors": [
+          {
+            "NextAction": "9f8a41a2-8194-4d99-9504-41a7e273c7f4",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "9f8a41a2-8194-4d99-9504-41a7e273c7f4",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "$.External.empty_prompt",
+        "LexV2Bot": {
+          "AliasArn": "${intake_bot_alias_arn}"
+        },
+        "LexSessionAttributes": {
+          "customer_number": "$.CustomerEndpoint.Address",
+          "connect_instance_id": "${connect_instance_id}",
+          "connect_contact_id": "$.InitialContactId"
+        },
+        "LexTimeoutSeconds": {
+          "Text": "2700"
+        }
+      },
+      "Identifier": "9f8a41a2-8194-4d99-9504-41a7e273c7f4",
+      "Type": "ConnectParticipantWithLexBot",
+      "Transitions": {
+        "NextAction": "b5b2947c-f4c2-4e55-b043-1ff2cf120e65",
+        "Conditions": [
+          {
+            "NextAction": "d3bbf6e2-4c58-450c-9ca7-4a40b65f5795",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "IntakeForm"
+              ]
+            }
+          },
+          {
+            "NextAction": "d3bbf6e2-4c58-450c-9ca7-4a40b65f5795",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "FallbackIntent"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "ccb659d5-fd1e-436b-8844-bc590c1de68a",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "d3bbf6e2-4c58-450c-9ca7-4a40b65f5795",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "b5b2947c-f4c2-4e55-b043-1ff2cf120e65",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ChatBehavior": {
+          "ChatAnalyticsBehavior": {
+            "Enabled": "True",
+            "AnalyticsLanguage": "en-US",
+            "AnalyticsModes": [
+              "ContactLens"
+            ],
+            "ConversationalAnalyticsRedactionConfiguration": {
+              "Enabled": "True",
+              "RedactionMaskMode": "EntityType",
+              "RedactionResults": "RedactedOnly"
+            },
+            "InFlightChatRedactionConfiguration": {
+              "Enabled": "False"
+            },
+            "SentimentConfiguration": {
+              "Enabled": "False"
+            }
+          }
+        }
+      },
+      "Identifier": "ed7cf5d8-a4f3-4bb7-8296-146a46b47ce8",
+      "Type": "UpdateContactRecordingAndAnalyticsBehavior",
+      "Transitions": {
+        "NextAction": "71fce6bd-cda6-4bca-9b9e-e854c856d052",
+        "Errors": [
+          {
+            "NextAction": "error play prompt",
+            "ErrorType": "NoMatchingError"
+          },
+          {
+            "NextAction": "71fce6bd-cda6-4bca-9b9e-e854c856d052",
+            "ErrorType": "ChannelMismatch"
+          },
+          {
+            "NextAction": "71fce6bd-cda6-4bca-9b9e-e854c856d052",
+            "ErrorType": "InFlightRedactionConfigurationFailed"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Hi! This is CA Bridge Connect, a program of the Public Health Institute. We help people confidentially find quick access to treatment for opioid use.\n\nBy replying YES, you agree to receive SMS messages from CA Bridge Connect, including intake questions, treatment resources, and follow-up reminders. Msg & data rates may apply. Message frequency varies.\n\nPrivacy Policy & Terms: cabridgeconnect.org/policies\n\nIn a medical emergency, call 911.\n\nReply HELP for help. Reply STOP to opt out at any time."
+      },
+      "Identifier": "42ecad54-c047-4093-a13a-4c077b108ab9",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "d0d5ed0d-1217-4518-a733-5efa60b5140b",
+        "Errors": [
+          {
+            "NextAction": "d0d5ed0d-1217-4518-a733-5efa60b5140b",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "${inbound_sms_tracking_lambda_arn}",
+        "InvocationTimeLimitSeconds": "8",
+        "InvocationType": "SYNCHRONOUS",
+        "LambdaInvocationAttributes": {
+          "customerNumber": "$.CustomerEndpoint.Address",
+          "customerSMS": "$.Media.InitialMessage"
+        },
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "71fce6bd-cda6-4bca-9b9e-e854c856d052",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "is first time user",
+        "Errors": [
+          {
+            "NextAction": "is first time user",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "2b0aaa26-0ef6-4c3b-b626-5660e4edd013",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.External.isFirstTimeUser"
+      },
+      "Identifier": "is first time user",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "42ecad54-c047-4093-a13a-4c077b108ab9",
+        "Conditions": [
+          {
+            "NextAction": "42ecad54-c047-4093-a13a-4c077b108ab9",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          },
+          {
+            "NextAction": "0a4e11fc-235d-4d45-a912-b77eeec7eef3",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "false"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "42ecad54-c047-4093-a13a-4c077b108ab9",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "Thank you for reaching out to CA Bridge Connect! Please give us a call at 800-944-1807 to discuss your referral. We’re available Mon–Fri, 9am–5pm PT."
+      },
+      "Identifier": "0a4e11fc-235d-4d45-a912-b77eeec7eef3",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "2b0aaa26-0ef6-4c3b-b626-5660e4edd013",
+        "Errors": [
+          {
+            "NextAction": "2b0aaa26-0ef6-4c3b-b626-5660e4edd013",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "${cb_masking_flow_module_id}:$LATEST"
+      },
+      "Identifier": "b9fc3f59-4b59-4e16-86c9-7f09689a2a5c",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "30dc2433-d78e-4503-a8a6-746662880dfe",
+        "Errors": [
+          {
+            "NextAction": "30dc2433-d78e-4503-a8a6-746662880dfe",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "30dc2433-d78e-4503-a8a6-746662880dfe",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "case_id": "$.Case.case_id"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "da3cc2e4-1a73-4c0f-82aa-8c0dae3dfbc2",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+        "Errors": [
+          {
+            "NextAction": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "61b042ab-d2aa-4f18-a08e-40d25f90f750",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "error play prompt"
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.cases_any"
+      },
+      "Identifier": "e0f56dac-2ed8-4301-819a-a358f79980b6",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "error play prompt",
+        "Conditions": [
+          {
+            "NextAction": "bc379b36-85e3-4d40-8c38-9d12872308ec",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          },
+          {
+            "NextAction": "b9fc3f59-4b59-4e16-86c9-7f09689a2a5c",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "false"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "error play prompt",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowModuleId": "${cb_masking_flow_module_id}:$LATEST"
+      },
+      "Identifier": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+      "Type": "InvokeFlowModule",
+      "Transitions": {
+        "NextAction": "3c1485d8-001f-47e4-9a67-1bb73b34a246",
+        "Errors": [
+          {
+            "NextAction": "3c1485d8-001f-47e4-9a67-1bb73b34a246",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "3c1485d8-001f-47e4-9a67-1bb73b34a246",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseId": "$.Attributes.case_id",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "${latest_contact_type_field_id}": "SMS"
+        }
+      },
+      "Identifier": "bc379b36-85e3-4d40-8c38-9d12872308ec",
+      "Type": "UpdateCase",
+      "Transitions": {
+        "NextAction": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+        "Errors": [
+          {
+            "NextAction": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "77054172-f6c2-43c6-ad9e-65b7d3778d28",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ProfileRequestData": {
+          "FirstName": "$.Lex.Slots.firstname",
+          "PhoneNumber": "$.Lex.Slots.phone"
+        },
+        "ProfileResponseData": []
+      },
+      "Identifier": "6a550671-e0b9-4940-8480-02643e898e2b",
+      "Type": "CreateCustomerProfile",
+      "Transitions": {
+        "NextAction": "e65043bf-ba9e-42b7-b43e-48ee7c0af4dd",
+        "Errors": [
+          {
+            "NextAction": "fde2ae64-6c90-48fa-a1d4-17aca73689ab",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseTemplateId": "${general_support_template_id}",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "${latest_contact_type_field_id}": "SMS",
+          "${field_sms_consent_id}": "True",
+          "customer_id": "$.Customer.ProfileARN",
+          "status": "open",
+          "title": "New SMS"
+        }
+      },
+      "Identifier": "30dc2433-d78e-4503-a8a6-746662880dfe",
+      "Type": "CreateCase",
+      "Transitions": {
+        "NextAction": "da3cc2e4-1a73-4c0f-82aa-8c0dae3dfbc2",
+        "Errors": [
+          {
+            "NextAction": "61b042ab-d2aa-4f18-a08e-40d25f90f750",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "61b042ab-d2aa-4f18-a08e-40d25f90f750",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "ProfileArn": "$.Customer.ProfileARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "e65043bf-ba9e-42b7-b43e-48ee7c0af4dd",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "30dc2433-d78e-4503-a8a6-746662880dfe",
+        "Errors": [
+          {
+            "NextAction": "30dc2433-d78e-4503-a8a6-746662880dfe",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    }
+  ]
+}

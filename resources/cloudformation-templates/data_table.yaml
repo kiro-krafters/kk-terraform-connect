@@ -1,0 +1,59 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: Create an Amazon Connect Data Table with attributes and a record
+
+Parameters:
+  pConnectInstanceArn:
+    Type: String
+    Description: ARN of the Amazon Connect instance where the data table will be created.
+
+Resources:
+  rCBFlowConfigDataTable:
+    Type: AWS::Connect::DataTable
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      Name: "cb_flow_config"
+      Description: "Configuration data table for Connect flow."
+      Status: "PUBLISHED"
+      ValueLockLevel: "NONE"
+      TimeZone: "UTC"
+
+  rCBConfigNameAttribute:
+    Type: AWS::Connect::DataTableAttribute
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      DataTableArn: !GetAtt rCBFlowConfigDataTable.Arn
+      Name: "config_name"
+      Description: "Name of the configuration parameter."
+      ValueType: "TEXT"
+      Primary: true
+  rCBConfigValueAttribute:
+    Type: AWS::Connect::DataTableAttribute
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      DataTableArn: !GetAtt rCBFlowConfigDataTable.Arn
+      Name: "value"
+      Description: "Value of the configuration parameter."
+      ValueType: "TEXT"
+      Primary: false
+
+  rCBFlowConfigDataTableRecord:
+    Type: AWS::Connect::DataTableRecord
+    DependsOn:
+      - rCBConfigNameAttribute
+      - rCBConfigValueAttribute
+    Properties:
+      InstanceArn: !Ref pConnectInstanceArn
+      DataTableArn: !GetAtt rCBFlowConfigDataTable.Arn
+      DataTableRecord:
+        PrimaryValues:
+          - AttributeId: !GetAtt rCBConfigNameAttribute.AttributeId
+            AttributeValue: "is_masking_enabled"
+        Values:
+          - AttributeId: !GetAtt rCBConfigValueAttribute.AttributeId
+            AttributeValue: "true"
+Outputs:
+  oCBFlowConfigDataTableArn:
+    Description: ARN of the Amazon Connect Data Table.
+    Value: !GetAtt rCBFlowConfigDataTable.Arn
+    Export:
+      Name: !Sub "${AWS::StackName}-cb-flow-config-data-table-arn"

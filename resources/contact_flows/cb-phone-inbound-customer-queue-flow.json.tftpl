@@ -1,0 +1,902 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "67ab70c7-373b-408e-a324-14ec1883511a",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": -1271.2,
+      "y": 6.4
+    },
+    "ActionMetadata": {
+      "Turn on flow logging.": {
+        "position": {
+          "x": 1032,
+          "y": 1.6
+        },
+        "isFriendlyName": true
+      },
+      "Set recording timestamp": {
+        "position": {
+          "x": 3091.2,
+          "y": -14.4
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "LambdaFunctionARN": {
+            "useDynamic": true
+          }
+        },
+        "dynamicMetadata": {},
+        "useDynamic": true
+      },
+      "Set the vmx3_flag attribute for processing": {
+        "position": {
+          "x": 3461.6,
+          "y": -16
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "vmx3_timestamp": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "vmx3_timestamp"
+        ]
+      },
+      "Set vmx3 tag": {
+        "position": {
+          "x": 3809.6,
+          "y": -18.4
+        },
+        "isFriendlyName": true
+      },
+      "1172dfc2-76bc-449b-95cb-eff84832c05c": {
+        "position": {
+          "x": 4429.6,
+          "y": -25.6
+        }
+      },
+      "c7f04a0b-cb77-41ad-b1d4-7516e8607bfb": {
+        "position": {
+          "x": 4687.2,
+          "y": -27.2
+        }
+      },
+      "***End Call***": {
+        "position": {
+          "x": 4933.6,
+          "y": -20.8
+        },
+        "isFriendlyName": true
+      },
+      "Set the test config": {
+        "position": {
+          "x": 1264.8,
+          "y": -1.6
+        },
+        "isFriendlyName": true
+      },
+      "Set task delivery mode": {
+        "position": {
+          "x": 1503.2,
+          "y": -4
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "Set remaining required attributes for VM-copy-1": {
+        "position": {
+          "x": 1836,
+          "y": 8.8
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "vmx3_from": {
+              "useDynamic": true
+            },
+            "vmx3_queue_arn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "vmx3_from",
+          "vmx3_queue_arn"
+        ]
+      },
+      "30389d20-a46a-437a-9e46-e583110f3e62": {
+        "position": {
+          "x": 4634.4,
+          "y": 292.8
+        }
+      },
+      "Clear vmx3_flag": {
+        "position": {
+          "x": 4060,
+          "y": 286.4
+        },
+        "isFriendlyName": true,
+        "dynamicParams": []
+      },
+      "Was the vmx3_flag already set?": {
+        "position": {
+          "x": 3735.2,
+          "y": 283.2
+        },
+        "isFriendlyName": true,
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "e660d5a9-1b8f-4a3f-b61d-44c8533e25df",
+            "operator": {
+              "name": "Is greater than",
+              "value": "GreaterThan",
+              "shortDisplay": ">"
+            },
+            "value": "0"
+          }
+        ]
+      },
+      "Wait for caller to record.": {
+        "position": {
+          "x": 4115.2,
+          "y": -31.2
+        },
+        "isFriendlyName": true,
+        "conditionMetadata": [
+          {
+            "id": "b4e18f25-0f0b-4af3-9b82-7d2a6f96a615",
+            "value": "#"
+          }
+        ]
+      },
+      "Error messaging.": {
+        "position": {
+          "x": 4371.2,
+          "y": 284.8
+        },
+        "isFriendlyName": true
+      },
+      "f9e06f3b-dda9-4ee5-85ae-0c819cf340c5": {
+        "position": {
+          "x": 4.8,
+          "y": -1.6
+        }
+      },
+      "Set remaining required attributes for VMX3": {
+        "position": {
+          "x": 803.2,
+          "y": -1.6
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "Attributes": {
+            "vmx3_from": {
+              "useDynamic": true
+            },
+            "vmx3_queue_arn": {
+              "useDynamic": true
+            }
+          }
+        },
+        "dynamicParams": [
+          "vmx3_from",
+          "vmx3_queue_arn"
+        ]
+      },
+      "246b1eec-f96e-4520-8d05-0de52af0b463": {
+        "position": {
+          "x": 257.6,
+          "y": -2.4
+        },
+        "conditions": [],
+        "conditionMetadata": [
+          {
+            "id": "ac149de2-b0e6-4db9-bddb-c0671884df07",
+            "operator": {
+              "name": "Equals",
+              "value": "Equals",
+              "shortDisplay": "="
+            },
+            "value": "true"
+          }
+        ]
+      },
+      "7cb830ff-caea-4cf9-a52a-077f5b7716da": {
+        "position": {
+          "x": 526.4,
+          "y": -53.6
+        }
+      },
+      "67ab70c7-373b-408e-a324-14ec1883511a": {
+        "position": {
+          "x": -1113.6,
+          "y": 6.4
+        },
+        "parameters": {
+          "Messages": [
+            {
+              "PromptId": {
+                "displayName": "Inbound Call Connecting to Navigator"
+              }
+            },
+            {
+              "PromptId": {
+                "displayName": "Music_Pop_ThrowYourselfInFrontOfIt_Inst.wav"
+              }
+            }
+          ],
+          "InterruptFrequencySeconds": {
+            "unit": 1
+          }
+        },
+        "audio": [
+          {
+            "id": "${inbound_call_connecting_to_navigator_prompt_arn}",
+            "text": "Inbound Call Connecting to Navigator",
+            "type": "Prompt"
+          },
+          {
+            "id": "${music_pop_throw_yourself_in_front_of_it_prompt_arn}",
+            "text": "Music_Pop_ThrowYourselfInFrontOfIt_Inst.wav",
+            "type": "Prompt"
+          }
+        ],
+        "timeoutUnit": {
+          "value": "sec"
+        }
+      },
+      "e8fdd422-4877-459c-932f-d165e2aa93af": {
+        "position": {
+          "x": -248,
+          "y": -4
+        },
+        "parameters": {
+          "DataTableId": {
+            "displayName": "cb_flow_config"
+          }
+        }
+      },
+      "8f5ade51-e06b-41b7-ab2c-6a4a0942d522": {
+        "position": {
+          "x": -838.4,
+          "y": -5.6
+        },
+        "parameters": {
+          "PromptId": {
+            "displayName": "Inbound Call Nagiators Busy"
+          }
+        },
+        "promptName": "Inbound Call Nagiators Busy"
+      },
+      "9e88040f-f830-4701-9994-eeb14153d406": {
+        "position": {
+          "x": -566.4,
+          "y": -3.2
+        },
+        "parameters": {
+          "CaseRequestFields": {
+            "status": {
+              "displayName": "New Voicemail"
+            }
+          },
+          "caseId": {
+            "useDynamic": true
+          }
+        },
+        "action": "updateCaseAction",
+        "requestFieldsOptions": {
+          "status": "New Voicemail"
+        }
+      },
+      "Set Timestamp Function": {
+        "position": {
+          "x": 2836.8,
+          "y": -12.8
+        },
+        "isFriendlyName": true
+      },
+      "Play the start recording beep using SSML": {
+        "position": {
+          "x": 2269.6,
+          "y": -7.2
+        },
+        "isFriendlyName": true,
+        "parameters": {
+          "PromptId": {
+            "displayName": "Beep.wav"
+          }
+        },
+        "promptName": "Beep.wav"
+      },
+      "Enable Automated Interaction Recording": {
+        "position": {
+          "x": 2557.6,
+          "y": -11.2
+        },
+        "isFriendlyName": true
+      }
+    },
+    "Annotations": [
+      {
+        "type": "default",
+        "id": "fbec01a5-162a-483b-8b28-c87cbf244660",
+        "content": "This is the core voicemail experience. This flow module handles the initialization of Automated Interaction Recording, configuration of the minimum flags required to process the voicemail, and provides the customer experience. This module can be invoked from any normal contact flow.\n\nThe following attributes MUST have been defined previously:\n\nvmx3_mode - done\nvmx3_from\nvmx3_lang\nvmx3_queue_arn\nvmx3_target",
+        "actionId": "Turn on flow logging.",
+        "isFolded": true,
+        "position": {
+          "x": 1302.5,
+          "y": 166
+        },
+        "size": {
+          "height": 295,
+          "width": 300
+        }
+      },
+      {
+        "type": "default",
+        "id": "bab0bc02-210f-4855-b00f-3dbde5962f0c",
+        "content": "Setting max time for a voicemail may require two changes:\n\n1. Change the timeout for the Get customer input block. Max time is 180 seconds (3 min)\n2. If you need more than 3 minutes, adjust the number of loops in the voicemail timer loop. ",
+        "actionId": "Wait for caller to record.",
+        "isFolded": true,
+        "position": {
+          "x": 5156.5,
+          "y": 257
+        },
+        "size": {
+          "height": 295,
+          "width": 300
+        }
+      },
+      {
+        "type": "default",
+        "id": "7e45f469-444c-464e-a6a1-d63c92047971",
+        "content": "Sets the test parameters for the voicemail. Update as desired.",
+        "actionId": "Set the test config",
+        "isFolded": true,
+        "position": {
+          "x": 1593.5,
+          "y": 206
+        },
+        "size": {
+          "height": 295,
+          "width": 300
+        }
+      }
+    ],
+    "name": "cb_phone_inbound_customer_queue",
+    "description": "",
+    "type": "customerQueue",
+    "status": "published",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Enabled"
+      },
+      "Identifier": "Turn on flow logging.",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "Set the test config"
+      }
+    },
+    {
+      "Parameters": {
+        "LambdaFunctionARN": "$.FlowAttributes.vmx3_timestamper_function",
+        "InvocationTimeLimitSeconds": "3",
+        "InvocationType": "SYNCHRONOUS",
+        "ResponseValidation": {
+          "ResponseType": "STRING_MAP"
+        }
+      },
+      "Identifier": "Set recording timestamp",
+      "Type": "InvokeLambdaFunction",
+      "Transitions": {
+        "NextAction": "Set the vmx3_flag attribute for processing",
+        "Errors": [
+          {
+            "NextAction": "Was the vmx3_flag already set?",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_flag": "1",
+          "vmx3_timestamp": "$.External.vmx3_timestamp"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set the vmx3_flag attribute for processing",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Set vmx3 tag",
+        "Errors": [
+          {
+            "NextAction": "Was the vmx3_flag already set?",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Tags": {
+          "function": "vmx3"
+        }
+      },
+      "Identifier": "Set vmx3 tag",
+      "Type": "TagContact",
+      "Transitions": {
+        "NextAction": "Wait for caller to record.",
+        "Errors": [
+          {
+            "NextAction": "Wait for caller to record.",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "We'll call you back!"
+      },
+      "Identifier": "1172dfc2-76bc-449b-95cb-eff84832c05c",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "c7f04a0b-cb77-41ad-b1d4-7516e8607bfb",
+        "Errors": [
+          {
+            "NextAction": "c7f04a0b-cb77-41ad-b1d4-7516e8607bfb",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "RecordingBehavior": {
+          "RecordedParticipants": [],
+          "IVRRecordingBehavior": "Disabled"
+        }
+      },
+      "Identifier": "c7f04a0b-cb77-41ad-b1d4-7516e8607bfb",
+      "Type": "UpdateContactRecordingBehavior",
+      "Transitions": {
+        "NextAction": "***End Call***"
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "***End Call***",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "vmx3_task_flow": {
+            "Value": "2b535be2-2ada-4548-b0a3-0e62f92cfb8d"
+          }
+        }
+      },
+      "Identifier": "Set the test config",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "Set task delivery mode",
+        "Errors": [
+          {
+            "NextAction": "Set task delivery mode",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_mode": "task",
+          "vmx3_target": "queue",
+          "vmx3_do_genai_summary": "false"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set task delivery mode",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Set remaining required attributes for VM-copy-1",
+        "Errors": [
+          {
+            "NextAction": "Set remaining required attributes for VM-copy-1",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_from": "$.CustomerEndpoint.Address",
+          "vmx3_lang": "en-US",
+          "vmx3_queue_arn": "$.Queue.ARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set remaining required attributes for VM-copy-1",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Play the start recording beep using SSML",
+        "Errors": [
+          {
+            "NextAction": "Play the start recording beep using SSML",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {},
+      "Identifier": "30389d20-a46a-437a-9e46-e583110f3e62",
+      "Type": "DisconnectParticipant",
+      "Transitions": {}
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_flag": "0"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Clear vmx3_flag",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Error messaging.",
+        "Errors": [
+          {
+            "NextAction": "Error messaging.",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.Attributes.vmx3_flag"
+      },
+      "Identifier": "Was the vmx3_flag already set?",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Error messaging.",
+        "Conditions": [
+          {
+            "NextAction": "Clear vmx3_flag",
+            "Condition": {
+              "Operator": "NumberGreaterThan",
+              "Operands": [
+                "0"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Error messaging.",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "StoreInput": "False",
+        "InputTimeLimitSeconds": "120",
+        "SSML": "<speak>\n<break time=\"5s\"/>\n</speak>"
+      },
+      "Identifier": "Wait for caller to record.",
+      "Type": "GetParticipantInput",
+      "Transitions": {
+        "NextAction": "1172dfc2-76bc-449b-95cb-eff84832c05c",
+        "Conditions": [
+          {
+            "NextAction": "1172dfc2-76bc-449b-95cb-eff84832c05c",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "#"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "1172dfc2-76bc-449b-95cb-eff84832c05c",
+            "ErrorType": "InputTimeLimitExceeded"
+          },
+          {
+            "NextAction": "1172dfc2-76bc-449b-95cb-eff84832c05c",
+            "ErrorType": "NoMatchingCondition"
+          },
+          {
+            "NextAction": "Error messaging.",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Text": "The voicemail system has encountered an error. We are placing you in queue."
+      },
+      "Identifier": "Error messaging.",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "30389d20-a46a-437a-9e46-e583110f3e62",
+        "Errors": [
+          {
+            "NextAction": "30389d20-a46a-437a-9e46-e583110f3e62",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "is_masking_enable": {
+            "Value": "$.DataTables.getConfig.value"
+          }
+        }
+      },
+      "Identifier": "f9e06f3b-dda9-4ee5-85ae-0c819cf340c5",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "246b1eec-f96e-4520-8d05-0de52af0b463",
+        "Errors": [
+          {
+            "NextAction": "246b1eec-f96e-4520-8d05-0de52af0b463",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "Attributes": {
+          "vmx3_from": "$.CustomerEndpoint.Address",
+          "vmx3_lang": "en-US",
+          "vmx3_queue_arn": "$.Queue.ARN"
+        },
+        "TargetContact": "Current"
+      },
+      "Identifier": "Set remaining required attributes for VMX3",
+      "Type": "UpdateContactAttributes",
+      "Transitions": {
+        "NextAction": "Turn on flow logging.",
+        "Errors": [
+          {
+            "NextAction": "Turn on flow logging.",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "ComparisonValue": "$.FlowAttributes.is_masking_enable"
+      },
+      "Identifier": "246b1eec-f96e-4520-8d05-0de52af0b463",
+      "Type": "Compare",
+      "Transitions": {
+        "NextAction": "Set remaining required attributes for VMX3",
+        "Conditions": [
+          {
+            "NextAction": "7cb830ff-caea-4cf9-a52a-077f5b7716da",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "true"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "Set remaining required attributes for VMX3",
+            "ErrorType": "NoMatchingCondition"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowLoggingBehavior": "Disabled"
+      },
+      "Identifier": "7cb830ff-caea-4cf9-a52a-077f5b7716da",
+      "Type": "UpdateFlowLoggingBehavior",
+      "Transitions": {
+        "NextAction": "Set remaining required attributes for VMX3"
+      }
+    },
+    {
+      "Parameters": {
+        "Messages": [
+          {
+            "PromptId": "${inbound_call_connecting_to_navigator_prompt_arn}"
+          },
+          {
+            "PromptId": "${music_pop_throw_yourself_in_front_of_it_prompt_arn}"
+          }
+        ],
+        "InterruptFrequencySeconds": "45",
+        "ContinueMessagingDuringInterrupt": "false"
+      },
+      "Identifier": "67ab70c7-373b-408e-a324-14ec1883511a",
+      "Type": "MessageParticipantIteratively",
+      "Transitions": {
+        "NextAction": "8f5ade51-e06b-41b7-ab2c-6a4a0942d522",
+        "Conditions": [
+          {
+            "NextAction": "8f5ade51-e06b-41b7-ab2c-6a4a0942d522",
+            "Condition": {
+              "Operator": "Equals",
+              "Operands": [
+                "MessagesInterrupted"
+              ]
+            }
+          }
+        ],
+        "Errors": [
+          {
+            "NextAction": "8f5ade51-e06b-41b7-ab2c-6a4a0942d522",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "DataTableId": "64f59044-2dd6-47a8-84e7-95a81cb1b9f2",
+        "Queries": [
+          {
+            "QueryName": "getConfig",
+            "Attributes": [
+              "value"
+            ],
+            "PrimaryValues": [
+              {
+                "AttributeName": "config_name",
+                "Value": "is_masking_enable"
+              }
+            ]
+          }
+        ]
+      },
+      "Identifier": "e8fdd422-4877-459c-932f-d165e2aa93af",
+      "Type": "EvaluateDataTableValues",
+      "Transitions": {
+        "NextAction": "f9e06f3b-dda9-4ee5-85ae-0c819cf340c5",
+        "Errors": [
+          {
+            "NextAction": "f9e06f3b-dda9-4ee5-85ae-0c819cf340c5",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "PromptId": "${inbound_call_navigator_busy_prompt_arn}"
+      },
+      "Identifier": "8f5ade51-e06b-41b7-ab2c-6a4a0942d522",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "9e88040f-f830-4701-9994-eeb14153d406",
+        "Errors": [
+          {
+            "NextAction": "9e88040f-f830-4701-9994-eeb14153d406",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "LinkContactToCase": "true",
+        "CaseId": "$.Attributes.case_id",
+        "ContactToLink": "Current",
+        "CaseRequestFields": {
+          "status": "New Voicemail"
+        }
+      },
+      "Identifier": "9e88040f-f830-4701-9994-eeb14153d406",
+      "Type": "UpdateCase",
+      "Transitions": {
+        "NextAction": "e8fdd422-4877-459c-932f-d165e2aa93af",
+        "Errors": [
+          {
+            "NextAction": "e8fdd422-4877-459c-932f-d165e2aa93af",
+            "ErrorType": "ContactNotLinked"
+          },
+          {
+            "NextAction": "e8fdd422-4877-459c-932f-d165e2aa93af",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "FlowAttributes": {
+          "vmx3_timestamper_function": {
+            "Value": "${cb_vm_timestamper_lambda_arn}"
+          }
+        }
+      },
+      "Identifier": "Set Timestamp Function",
+      "Type": "UpdateFlowAttributes",
+      "Transitions": {
+        "NextAction": "Set recording timestamp",
+        "Errors": [
+          {
+            "NextAction": "Set recording timestamp",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "PromptId": "${beep_prompt_arn}"
+      },
+      "Identifier": "Play the start recording beep using SSML",
+      "Type": "MessageParticipant",
+      "Transitions": {
+        "NextAction": "Enable Automated Interaction Recording",
+        "Errors": [
+          {
+            "NextAction": "Enable Automated Interaction Recording",
+            "ErrorType": "NoMatchingError"
+          }
+        ]
+      }
+    },
+    {
+      "Parameters": {
+        "RecordingBehavior": {
+          "RecordedParticipants": [],
+          "IVRRecordingBehavior": "Enabled"
+        },
+        "AnalyticsBehavior": {
+          "Enabled": "True",
+          "AnalyticsLanguage": "en-US",
+          "AnalyticsRedactionBehavior": "Disabled",
+          "AnalyticsRedactionResults": "RedactedAndOriginal",
+          "ChannelConfiguration": {
+            "Chat": {
+              "AnalyticsModes": []
+            },
+            "Voice": {
+              "AnalyticsModes": [
+                "AutomatedInteraction"
+              ]
+            }
+          },
+          "SentimentConfiguration": {
+            "Enabled": "False"
+          }
+        }
+      },
+      "Identifier": "Enable Automated Interaction Recording",
+      "Type": "UpdateContactRecordingBehavior",
+      "Transitions": {
+        "NextAction": "Set Timestamp Function"
+      }
+    }
+  ]
+}

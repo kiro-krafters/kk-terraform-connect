@@ -1,0 +1,32 @@
+{
+  "Version": "2019-10-30",
+  "StartAction": "9cccbe01-a47f-4b11-99a4-0ea8c2bb7eda",
+  "Metadata": {
+    "entryPointPosition": {
+      "x": 40,
+      "y": 40
+    },
+    "ActionMetadata": {
+      "9cccbe01-a47f-4b11-99a4-0ea8c2bb7eda": {
+        "position": {
+          "x": 225.6,
+          "y": 39.2
+        }
+      }
+    },
+    "Annotations": [],
+    "name": "cb_phone_agent_whisper",
+    "description": "",
+    "type": "agentWhisper",
+    "status": "PUBLISHED",
+    "hash": {}
+  },
+  "Actions": [
+    {
+      "Parameters": {},
+      "Identifier": "9cccbe01-a47f-4b11-99a4-0ea8c2bb7eda",
+      "Type": "EndFlowExecution",
+      "Transitions": {}
+    }
+  ]
+}
