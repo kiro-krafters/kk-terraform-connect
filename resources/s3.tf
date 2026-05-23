@@ -6,50 +6,36 @@
 module "kk_serverless_deployment_bucket" {
   source = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-s3-bucket-wrapper?ref=main"
   
-  bucket_name = format("kk-backend-serverless-deployment-%s-%s", local.region_prefix, var.env)
+  bucket_name              = format("kk-backend-serverless-deployment-%s-%s", local.region_prefix, var.env)
+  acl                      = null
+  public_acl_configuration = null
+  object_ownership         = "BucketOwnerEnforced"
   
-  versioning = {
-    enabled = true
+  versioning_configuration = {
+    status     = true
+    mfa_delete = false
   }
 
-  server_side_encryption_configuration = {
-    rule = {
-      apply_server_side_encryption_by_default = {
-        sse_algorithm = "AES256"
+  encryption_configuration = {
+    rule = [
+      {
+        apply_server_side_encryption_by_default = {
+          sse_algorithm = "AES256"
+        }
+        bucket_key_enabled = true
       }
-    }
+    ]
   }
-
-  block_public_acls       = true
-  block_public_policy     = true
-  ignore_public_acls      = true
-  restrict_public_buckets = true
 
   tags = local.tags
 }
 
 # S3 Bucket Policy for Serverless Deployment
-resource "aws_s3_bucket_policy" "kk_serverless_deployment_policy" {
-  bucket = module.kk_serverless_deployment_bucket.s3_bucket_id
-
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Sid    = "DenyInsecureTransport"
-        Effect = "Deny"
-        Principal = "*"
-        Action = "s3:*"
-        Resource = [
-          module.kk_serverless_deployment_bucket.s3_bucket_arn,
-          "${module.kk_serverless_deployment_bucket.s3_bucket_arn}/*"
-        ]
-        Condition = {
-          Bool = {
-            "aws:SecureTransport" = "false"
-          }
-        }
-      }
-    ]
-  })
+module "kk_serverless_deployment_bucket_policy" {
+  source            = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-s3-bucket-wrapper?ref=main"
+  create_bucket     = false
+  cloudfront_policy = false
+  bucket_name       = format("kk-backend-serverless-deployment-%s-%s", local.region_prefix, var.env)
+  policy            = data.aws_iam_policy_document.kk_serverless_deployment_bucket_policy.json
+  depends_on        = [module.kk_serverless_deployment_bucket]
 }
