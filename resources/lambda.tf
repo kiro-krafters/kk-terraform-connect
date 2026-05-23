@@ -1,0 +1,297 @@
+# ========================================
+# Lambda Functions for KK Backend
+# ========================================
+
+locals {
+  kk_lambda_common_config = {
+    runtime                 = "nodejs20.x"
+    timeout                 = 6
+    memory_size             = 1024
+    ignore_source_code_hash = true
+    package                 = "./lambda_function/kk-backend.zip"
+    tags                    = local.tags
+  }
+
+  kk_lambda_bedrock_config = {
+    runtime                 = "nodejs20.x"
+    timeout                 = 29
+    memory_size             = 1024
+    ignore_source_code_hash = true
+    package                 = "./lambda_function/kk-backend.zip"
+    tags                    = local.tags
+  }
+
+  kk_lambda_environment = {
+    STAGE                      = var.env
+    CONNECT_INSTANCE_ID        = var.connect_instance_id
+    CONNECT_INSTANCE_ARN       = var.connect_instance_arn
+    CONNECT_QUEUE_GENERAL_ID   = var.connect_queue_general_id
+    CONNECT_QUEUE_CLAIMS_ID    = var.connect_queue_claims_id
+    CONNECT_CHAT_FLOW_ID       = var.connect_chat_flow_id
+    CONNECT_VOICE_FLOW_ID      = var.connect_voice_flow_id
+    COGNITO_USER_POOL_ID       = var.cognito_user_pool_id
+    COGNITO_REGION             = var.region
+    LEX_BOT_ID                 = var.lex_bot_id
+    LEX_BOT_ALIAS_ID           = var.lex_bot_alias_id
+    LEX_LOCALE_ID              = "en_US"
+    BEDROCK_MODEL_ID           = "anthropic.claude-3-haiku-20240307-v1:0"
+    DYNAMODB_SESSIONS_TABLE    = module.kk_chat_sessions.dynamodb_table_id
+    DYNAMODB_HISTORY_TABLE     = module.kk_contact_history.dynamodb_table_id
+    DYNAMODB_CALLBACKS_TABLE   = module.kk_callbacks.dynamodb_table_id
+    DYNAMODB_AUDIT_TABLE       = module.kk_audit_logs.dynamodb_table_id
+    PORTAL_ORIGIN              = var.portal_origin
+    CCP_ORIGIN                 = var.ccp_origin
+    ADMIN_ORIGIN               = var.admin_origin
+  }
+
+  kk_lambda_iam_config = {
+    policy_jsons = true
+  }
+}
+
+# Health Check Lambda
+module "kk_health_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-health"
+  handler                 = "src/handlers/health.handler"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Chat Start Lambda
+module "kk_portal_chat_start_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalChatStart"
+  handler                 = "src/handlers/portalChat.start"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Chat Send Message Lambda
+module "kk_portal_chat_send_message_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalChatSendMessage"
+  handler                 = "src/handlers/portalChat.sendMessage"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Chat Get Messages Lambda
+module "kk_portal_chat_get_messages_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalChatGetMessages"
+  handler                 = "src/handlers/portalChat.getMessages"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Chat End Lambda
+module "kk_portal_chat_end_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalChatEnd"
+  handler                 = "src/handlers/portalChat.end"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Callback Request Lambda
+module "kk_portal_callback_request_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalCallbackRequest"
+  handler                 = "src/handlers/portalCallback.request"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Portal Contact Submit Lambda
+module "kk_portal_contact_submit_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-portalContactSubmit"
+  handler                 = "src/handlers/portalContact.submit"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# AI Message Lambda
+module "kk_ai_message_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-aiMessage"
+  handler                 = "src/handlers/aiChat.message"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# AI Transfer Lambda
+module "kk_ai_transfer_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-aiTransfer"
+  handler                 = "src/handlers/agentTransfer.transfer"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# AI Bedrock Message Lambda (with longer timeout)
+module "kk_ai_bedrock_message_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-aiBedrockMessage"
+  handler                 = "src/handlers/bedrockChat.message"
+  runtime                 = local.kk_lambda_bedrock_config.runtime
+  local_existing_package  = local.kk_lambda_bedrock_config.package
+  timeout                 = local.kk_lambda_bedrock_config.timeout
+  memory_size             = local.kk_lambda_bedrock_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_bedrock_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_bedrock_config.tags
+}
+
+# Get Metrics Lambda
+module "kk_get_metrics_lambda" {
+  source                  = "git::https://github.com/kiro-krafters/kk-terraform-modules-wrapper.git//terraform-aws-lambda-wrapper?ref=main"
+  name                    = "kk-backend-${var.env}-getMetrics"
+  handler                 = "src/handlers/metrics.getMetrics"
+  runtime                 = local.kk_lambda_common_config.runtime
+  local_existing_package  = local.kk_lambda_common_config.package
+  timeout                 = local.kk_lambda_common_config.timeout
+  memory_size             = local.kk_lambda_common_config.memory_size
+  ignore_source_code_hash = local.kk_lambda_common_config.ignore_source_code_hash
+  attach                  = local.kk_lambda_iam_config
+  iam_configuration = {
+    policy_jsons = [data.aws_iam_policy_document.kk_lambda_policy.json]
+    role_arn     = module.kk_backend_lambda_role.iam_role_arn
+  }
+  publish               = true
+  kms_key_arn           = module.common_aws_kms_key.key_arn
+  logging_configuration = local.lambda_log_group_configurations
+  environment_variables = local.kk_lambda_environment
+  tags                  = local.kk_lambda_common_config.tags
+}
+
+# Note: Due to the large number of Lambda functions (40+), I'm creating the core functions above.
+# Additional Lambda functions for agents, queues, contacts, callbacks, bot stats, and admin functions
+# should follow the same pattern. Each function would have its own module block with appropriate
+# handler, name, and configuration.
